@@ -1,0 +1,61 @@
+class Player {
+    field int x, y;
+    field int width, height; 
+    field boolean hasMug;
+
+    constructor Player new()
+    {
+        let x = 0;
+        let y = 0;
+        let width = 20;
+        let height = 20;
+        let hasMug = false;
+        return this;
+    }
+
+    method void move() 
+    {
+        if (Keyboard.keyPressed() = 130)
+        { 
+            let x = x - 2;
+        }
+        if (Keyboard.keyPressed() = 132)  
+        { 
+            let x = x + 2;
+        }
+        if (Keyboard.keyPressed() = 131)  
+        { 
+            let y = y + 2;
+        }
+        if (Keyboard.keyPressed() = 133)  
+        { 
+            let y = y - 2;
+        }
+        return;
+    }
+
+    method void draw() {
+        if (hasMug) {
+            do drawWithBear(); 
+        } else {
+            do Screen.drawRectangle(x, y, width, height);
+        }
+        return;
+    }
+    method void drawWithBear()
+    {
+        do Screen.drawRectangle(x, y, width, height);
+        return;
+    }
+    method void serveDrink() {
+        if (~hasMug) {
+            let hasMug = true;
+        }
+        return;
+    }
+
+    method void takeEmptyMug() {
+        let hasMug = false;
+        return;
+    }
+}

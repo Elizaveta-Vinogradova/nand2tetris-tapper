@@ -1,0 +1,39 @@
+class Tapper {
+    field Player player;
+    field int score;
+    field int level;
+    field int time;
+    field int lifecount;
+    constructor Tapper new()
+    {
+        let score = 0;
+        let level = 1;
+        let player = Player.new();
+        let lifecount = 3;
+        return this;
+    }
+    method void run() 
+    {
+        while (lifecount > 0) {
+            do update();
+            do draw();
+            do Sys.wait(50);
+        }
+        return;
+    }
+
+    method void update() {
+        do player.move();
+        return;
+    }
+
+    method void draw() {
+        do Screen.clearScreen();
+        do player.draw();
+        return;
+    }
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

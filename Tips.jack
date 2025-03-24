@@ -1,0 +1,32 @@
+class Tips
+{ 
+    field Dancer dancer;
+    field int x, y, radius;
+    field boolean IsCollected;
+    constructor Tips new(int x, int y)
+    {
+        let dancer = Dancer.new();
+        let x = x;
+        let y = y;
+        let radius = 1;
+        let IsCollected = false;
+        return this;
+    }
+    
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+    
+    method void drawTips()
+    {
+        while(IsCollected = false)
+        {
+            do Screen.drawCircle(x, y, radius);
+        }
+        do dancer.dance();
+        do dancer.dispose();
+        return;
+    }
+}

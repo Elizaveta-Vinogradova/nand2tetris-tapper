@@ -1,0 +1,39 @@
+class BottlesOfBeer
+{
+    field boolean ifFull;
+    constructor BottlesOfBeer new()
+    {
+        let ifFull = true;
+        return this;
+    }
+    
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+    
+    method void Change(int speed)
+    {
+        if (ifFull = false) 
+        {
+            do DrawEmpty();
+        
+        } 
+        else 
+        {
+            do DrawFull();
+        }
+        return;
+    }
+    
+    method void DrawFull()
+    {
+        return;
+    }
+    
+    method void DrawEmpty()
+    {
+        return;
+    }
+}

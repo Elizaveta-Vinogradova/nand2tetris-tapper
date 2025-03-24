@@ -1,0 +1,42 @@
+class Visitors {
+    field int x, y;
+    field int speed;
+    field boolean wantsDrink;
+    field boolean hasEmptyMug;
+
+    constructor Visitors new(int x, int y)
+    {
+        let x = x;
+        let y = y;
+        let wantsDrink = true;
+        let hasEmptyMug = true;
+        return this;
+    }
+
+    method void move() 
+    {
+        while(wantsDrink = true)
+        {
+            let x = x + 3;
+            if (x = 50)
+            {
+                
+            }
+        }
+        while(wantsDrink = false)
+        {
+            let x = x - 3;
+            if (x = 0)
+            {
+                do Memory.deAlloc(this);
+            }
+        }
+        return;
+    }
+
+    method void draw() {
+
+        do Screen.drawCircle(x, y, 5);
+        return;
+      }
+}

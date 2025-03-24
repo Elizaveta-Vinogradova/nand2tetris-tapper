@@ -1,0 +1,18 @@
+class Dancer
+{
+    constructor Dancer new()
+    {
+        return this;
+    }
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
+    
+    method void dance()
+    {
+        do Screen.drawCircle(5, 5, 3);
+        return;
+    }
+}
