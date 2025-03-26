@@ -1,0 +1,39 @@
+class Rows
+{
+    method void drawRow()
+    {
+        do Screen.setColor(true);
+         
+        /** drawing upper row */
+         
+        /** drawing counter */
+        do Screen.drawRectangle(0, 55, 340, 70);
+        do Screen.drawRectangle(340, 58, 344, 70);
+        do Screen.drawRectangle(344, 60, 348, 70);
+        do Screen.drawRectangle(348, 62, 352, 70);
+        do Screen.drawRectangle(352, 64, 354, 70);
+        
+        /** drawing wall */
+        do Screen.drawRectangle(0, 75, 355, 105);
+        
+        /** drawing lower bound */
+        do Screen.drawRectangle(0, 107, 355, 110);
+        
+        /** drawing lower row */
+        
+        /** drawing counter */
+        do Screen.drawRectangle(0, 145, 370, 165);
+        do Screen.drawRectangle(370, 148, 374, 165);
+        do Screen.drawRectangle(374, 150, 378, 165);
+        do Screen.drawRectangle(378, 152, 380, 165);
+        do Screen.drawRectangle(380, 154, 382, 165);
+        
+        /** drawing wall */
+        do Screen.drawRectangle(0, 170, 385, 200);
+        
+        /** drawing lower bound */
+        do Screen.drawRectangle(0, 202, 385, 205);
+        
+        return;
+    }
+}
