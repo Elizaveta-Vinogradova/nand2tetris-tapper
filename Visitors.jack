@@ -15,7 +15,7 @@ class Visitors {
 
     method void move() 
     {
-        while(wantsDrink = true)
+        while(wantsDrink)
         {
             let x = x + 3;
             if (x = 50)
@@ -23,7 +23,7 @@ class Visitors {
                 
             }
         }
-        while(wantsDrink = false)
+        while(~wantsDrink)
         {
             let x = x - 3;
             if (x = 0)

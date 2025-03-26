@@ -15,7 +15,7 @@ class BottlesOfBeer
     
     method void Change(int speed)
     {
-        if (ifFull = false) 
+        if (~ifFull) 
         {
             do DrawEmpty();
         
