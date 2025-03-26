@@ -1,8 +1,8 @@
 class Main
 {
-    field Tapper game;
     function void main()
     {
+        var Tapper game;
         while (true)
         {
             do Screen.clearScreen();
