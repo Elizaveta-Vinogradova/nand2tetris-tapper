@@ -1,9 +1,11 @@
 class Mug
 {
     field boolean ifFull;
-	field int x;
-    constructor Mug new()
+	field int x, y, speed;
+    constructor Mug new(int x, int y)
     {
+		let x = x;
+		let y = y;
         let ifFull = true;
         return this;
     }
@@ -13,20 +15,34 @@ class Mug
         do Memory.deAlloc(this);
         return;
     }
-    
-    method void Change(int speed)
-    {
-        if (~ifFull) 
+    method void update()
+	{
+		if (~ifFull) 
         {
             do Mug.EmptyMag(x);
-        
+			let xRows = do Rows.returnX();
+			while (x != xRows)
+			{
+				x = x + speed;
+			}
+			let tapperX = do Player.returnX();
+			let tapperY = do Player.returnY();
+			if (x != tapperX | y != tapperY)
+			{
+				do Tapper.deleteLife();
+				do Mug.dispose();
+			}
         } 
-        else 
-        {
-            do Mug.FullMug(x);
-        }
-        return;
-    }
+		else
+		{
+			do Mug.FullMug(x);
+			while (x != 0)
+			{
+				x = x - speed;
+			}
+			do Mug.dispose();
+		}
+	}
     
     function void FullMug(int location) {
     	var int memAddress; 
