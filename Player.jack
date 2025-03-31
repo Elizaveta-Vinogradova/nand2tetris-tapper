@@ -1,14 +1,11 @@
 class Player {
     field int x, y;
-    field int width, height; 
     field boolean hasMug;
 
     constructor Player new()
     {
         let x = 0;
         let y = 0;
-        let width = 20;
-        let height = 20;
         let hasMug = false;
         return this;
     }
@@ -31,18 +28,25 @@ class Player {
         { 
             let y = y - 2;
         }
+        var xTips = do Tips.returnX();
+        var yTips = do Tips.returnY();
+        if (x = xTips){
+            if (y = yTips){
+            do Tips.dispose();
+            do Dancer.dance();
+            }} 
         return;
     }
 
     method void draw() {
         if (hasMug) {
-            do drawWithBear(); 
+            do drawWithBeer(); 
         } else {
             do Screen.drawRectangle(x, y, width, height);
         }
         return;
     }
-    method void drawWithBear()
+    method void drawWithBeer()
     {
         do Screen.drawRectangle(x, y, width, height);
         return;

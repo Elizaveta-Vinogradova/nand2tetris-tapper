@@ -27,6 +27,12 @@ class Tapper {
         return;
     }
 
+    method void deleteLife()
+    {
+        lifecount = lifecount - 1;
+        return;
+    }
+
     method void draw() {
         do Screen.clearScreen();
         do player.draw();

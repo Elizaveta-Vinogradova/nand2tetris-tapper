@@ -1,8 +1,8 @@
-class BottlesOfBeer
+class Mug
 {
     field boolean ifFull;
 	field int x;
-    constructor BottlesOfBeer new()
+    constructor Mug new()
     {
         let ifFull = true;
         return this;
@@ -18,12 +18,12 @@ class BottlesOfBeer
     {
         if (~ifFull) 
         {
-            do BottlesOfBeer.EmptyMag(x);
+            do Mug.EmptyMag(x);
         
         } 
         else 
         {
-            do BottlesOfBeer.FullMug(x);
+            do Mug.FullMug(x);
         }
         return;
     }

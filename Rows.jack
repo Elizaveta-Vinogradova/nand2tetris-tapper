@@ -1,5 +1,21 @@
 class Rows
 {
+    field int x, y;
+    field int leftCorner, rightCorner;
+    constructor Rows(int x, int y)
+    {
+        let x = x;
+        let y = y;
+        return this;
+    }
+    method int returnX()
+    {
+        return x;
+    }
+    method int returnY()
+    {
+        return y;
+    }
     method void drawRow()
     {
         do Screen.setColor(true);

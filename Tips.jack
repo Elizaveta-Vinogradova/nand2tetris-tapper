@@ -1,18 +1,24 @@
 class Tips
 { 
+    field int x,y;
     field Dancer dancer;
-    field int x, y, radius;
     field boolean IsCollected;
     constructor Tips new(int x, int y)
     {
-        let dancer = Dancer.new();
         let x = x;
         let y = y;
-        let radius = 1;
+        let dancer = Dancer.new();
         let IsCollected = false;
         return this;
     }
-    
+    method int returnX()
+    {
+        return x;
+    }
+    method int returnY()
+    {
+        return y;
+    }
     method void dispose()
     {
         do Memory.deAlloc(this);
@@ -22,7 +28,6 @@ class Tips
     function void draw(int location) {
     	var int memAddress; 
     	let memAddress = 16384+location;
-    	// column 0
     	do Memory.poke(memAddress, 14);
     	do Memory.poke(memAddress +32, 17);
     	do Memory.poke(memAddress +64, 14);
