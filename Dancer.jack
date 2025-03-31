@@ -1,5 +1,6 @@
 class Dancer
 {
+	field int x,y;
     constructor Dancer new()
     {
         return this;
@@ -9,7 +10,12 @@ class Dancer
         do Memory.deAlloc(this);
         return;
     }
-    
+    method void dance()
+	{
+		do Dancer.draw(x - 1);
+		do Dancer.draw(x);
+		do Dancer.draw(x + 1);
+	}
     function void draw(int location) {
     	var int memAddress; 
     	let memAddress = 16384+location;
