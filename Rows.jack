@@ -8,11 +8,11 @@ class Rows
         let y = y;
         return this;
     }
-    method int returnX()
+    function int returnX()
     {
         return x;
     }
-    method int returnY()
+    function int returnY()
     {
         return y;
     }

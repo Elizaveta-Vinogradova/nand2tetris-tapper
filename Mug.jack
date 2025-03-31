@@ -20,14 +20,15 @@ class Mug
 		if (~ifFull) 
         {
             do Mug.EmptyMag(x);
-			let xRows = do Rows.returnX();
-			while (x != xRows)
+			var int xRows;
+			let xRows = Rows.returnX();
+			while (~(x = xRows))
 			{
-				x = x + speed;
+				let x = x + speed;
 			}
-			let tapperX = do Player.returnX();
-			let tapperY = do Player.returnY();
-			if (x != tapperX | y != tapperY)
+			let tapperX = Player.returnX();
+			let tapperY = Player.returnY();
+			if (~(x = tapperX | y = tapperY))
 			{
 				do Tapper.deleteLife();
 				do Mug.dispose();
@@ -36,12 +37,13 @@ class Mug
 		else
 		{
 			do Mug.FullMug(x);
-			while (x != 0)
+			while (~(x = 0))
 			{
-				x = x - speed;
+				let x = x - speed;
 			}
 			do Mug.dispose();
 		}
+		return;
 	}
     
     function void FullMug(int location) {
