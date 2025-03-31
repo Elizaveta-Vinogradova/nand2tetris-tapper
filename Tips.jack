@@ -19,14 +19,13 @@ class Tips
         return;
     }
     
-    method void drawTips()
-    {
-        while(~IsCollected)
-        {
-            do Screen.drawCircle(x, y, radius);
-        }
-        do dancer.dance();
-        do dancer.dispose();
-        return;
+    function void draw(int location) {
+    	var int memAddress; 
+    	let memAddress = 16384+location;
+    	// column 0
+    	do Memory.poke(memAddress, 14);
+    	do Memory.poke(memAddress +32, 17);
+    	do Memory.poke(memAddress +64, 14);
+    	return;
     }
 }

@@ -17,8 +17,8 @@ class Tapper {
         while (lifecount > 0) {
             do update();
             do draw();
-            do Sys.wait(50);
         }
+        do dispose();
         return;
     }
 

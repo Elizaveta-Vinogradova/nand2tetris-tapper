@@ -10,9 +10,22 @@ class Dancer
         return;
     }
     
-    method void dance()
-    {
-        do Screen.drawCircle(5, 5, 3);
-        return;
+    function void draw(int location) {
+    	var int memAddress; 
+    	let memAddress = 16384+location;
+    	// column 0
+    	do Memory.poke(memAddress, 60);
+    	do Memory.poke(memAddress +32, 36);
+    	do Memory.poke(memAddress +64, 60);
+    	do Memory.poke(memAddress +96, 153);
+    	do Memory.poke(memAddress +128, 126);
+    	do Memory.poke(memAddress +160, 36);
+    	do Memory.poke(memAddress +192, 60);
+    	do Memory.poke(memAddress +224, 36);
+    	do Memory.poke(memAddress +256, 66);
+    	do Memory.poke(memAddress +288, 60);
+    	do Memory.poke(memAddress +320, 24);
+    	do Memory.poke(memAddress +352, 60);
+    	return;
     }
 }

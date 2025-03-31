@@ -34,9 +34,28 @@ class Visitors {
         return;
     }
 
-    method void draw() {
-
-        do Screen.drawCircle(x, y, 5);
-        return;
-      }
+    function void drawWithoutBeer(int location) {
+    	var int memAddress; 
+    	let memAddress = 16384+location;
+    	// column 0
+    	do Memory.poke(memAddress, 120);
+    	do Memory.poke(memAddress +32, 120);
+    	do Memory.poke(memAddress +64, 510);
+    	do Memory.poke(memAddress +96, 120);
+    	do Memory.poke(memAddress +128, 72);
+    	do Memory.poke(memAddress +160, 120);
+    	do Memory.poke(memAddress +192, 48);
+    	do Memory.poke(memAddress +224, 252);
+    	do Memory.poke(memAddress +256, 903);
+    	do Memory.poke(memAddress +288, 132);
+    	do Memory.poke(memAddress +320, 252);
+    	do Memory.poke(memAddress +352, 72);
+    	do Memory.poke(memAddress +384, 72);
+    	return;
+    }
+    
+    method void dispose() {
+            do Memory.deAlloc(this);
+            return;
+        }
 }
