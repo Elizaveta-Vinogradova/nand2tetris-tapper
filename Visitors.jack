@@ -25,8 +25,8 @@ class Visitors {
         while(wantsDrink)
         {
             let x = x + 3;
-            var xRows = do Rows.returnX();
-            var yRows = do Rows.returnY();
+            let xRows = do Rows.returnX();
+            let yRows = do Rows.returnY();
             if (x = xRows)
             {
                 if (wantsDrink)

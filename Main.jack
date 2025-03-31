@@ -2,11 +2,10 @@ class Main
 {
     function void main()
     {
-        var Tapper game;
         while (true)
         {
             do Screen.clearScreen();
-            let game = Tapper.new();
+            do Tapper.new();
             do game.run();
             do game.dispose();
         }
