@@ -12,6 +12,10 @@ class Player {
 
     method void move() 
     {
+        if (Keyboard.keyPressed() = 32)
+        {
+            let Mug = Mug.new(x ,y);
+        }
         if (Keyboard.keyPressed() = 130)
         { 
             let x = x - 2;
@@ -28,8 +32,8 @@ class Player {
         { 
             let y = y - 2;
         }
-        var xTips = do Tips.returnX();
-        var yTips = do Tips.returnY();
+        let xTips = do Tips.returnX();
+        let yTips = do Tips.returnY();
         if (x = xTips){
             if (y = yTips){
             do Tips.dispose();
