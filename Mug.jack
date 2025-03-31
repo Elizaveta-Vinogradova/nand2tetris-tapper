@@ -26,6 +26,7 @@ class Mug
 			{
 				let x = x + speed;
 			}
+			var int tapperX, tapperY;
 			let tapperX = Player.returnX();
 			let tapperY = Player.returnY();
 			if (~(x = tapperX | y = tapperY))

@@ -5,7 +5,8 @@ class Main
         while (true)
         {
             do Screen.clearScreen();
-            do Tapper.new();
+            var Tapper game;
+            let game = Tapper.new();
             do game.run();
             do game.dispose();
         }

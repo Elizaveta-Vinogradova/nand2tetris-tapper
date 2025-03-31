@@ -29,7 +29,7 @@ class Tapper {
 
     method void deleteLife()
     {
-        lifecount = lifecount - 1;
+        let lifecount = lifecount - 1;
         return;
     }
 

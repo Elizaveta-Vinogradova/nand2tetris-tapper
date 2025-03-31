@@ -32,8 +32,8 @@ class Player {
         { 
             let y = y - 2;
         }
-        let xTips = do Tips.returnX();
-        let yTips = do Tips.returnY();
+        let xTips = Tips.returnX();
+        let yTips = Tips.returnY();
         if (x = xTips){
             if (y = yTips){
             do Tips.dispose();
