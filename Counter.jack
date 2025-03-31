@@ -1,0 +1,31 @@
+class Counter
+{
+    field int x1, y1, x2, y2;
+    field int leftCorner, rightCorner;
+    constructor Counter new(int x1, int y1, int x2, int y2)
+    {
+        let x1 = x1;
+        let y1 = y1;
+        let y2 = y2;
+        let x2 = x2;
+        return this;
+    }
+    function int returnX()
+    {
+        return x2;
+    }
+    function int returnY()
+    {
+        return y1;
+    }
+    method void drawCounter()
+    {
+        do Screen.setColor(true);
+         
+        /** drawing upper row */
+         
+        /** drawing counter */
+        do Screen.drawRectangle(x1, y1, x2, y2);
+        return;
+    }
+}
