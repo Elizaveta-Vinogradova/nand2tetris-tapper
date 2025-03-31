@@ -12,6 +12,10 @@ class Tapper {
         let lifecount = 3;
         return this;
     }
+    method int level()
+    {
+        return level;
+    }
     method void run() 
     {
         while (lifecount > 0) {
@@ -23,6 +27,8 @@ class Tapper {
     }
 
     method void update() {
+        do Sys.Wait(20);
+        Visitors.new();
         do player.move();
         return;
     }

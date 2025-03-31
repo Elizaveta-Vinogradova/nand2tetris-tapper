@@ -3,6 +3,7 @@ class Visitors {
     field int speed;
     field boolean wantsDrink;
     field boolean hasEmptyMug;
+    field int howOften;
 
     constructor Visitors new(int x, int y)
     {
@@ -10,6 +11,7 @@ class Visitors {
         let y = y;
         let wantsDrink = true;
         let hasEmptyMug = true;
+        let howOften = Tapper.level();
         return this;
     }
     method int returnX()
