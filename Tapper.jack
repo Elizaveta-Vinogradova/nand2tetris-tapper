@@ -1,7 +1,7 @@
 class Tapper {
     field Player player;
     field int score;
-    field int level;
+    static int level;
     field int time;
     static int lifecount;
     constructor Tapper new()
