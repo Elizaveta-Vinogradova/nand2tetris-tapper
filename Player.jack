@@ -64,13 +64,23 @@ class Player {
         if (Keyboard.keyPressed() = 131)  
         { 
             do Player.clearOnlyPlayer();
-            let y = y + 2; 
+            if (y < 256) {
+                let y = y + 2;
+            }
+            else{
+                let y = y;
+            }
             do Player.draw();
         }
         if (Keyboard.keyPressed() = 133)  
         { 
             do Player.clearOnlyPlayer();
-            let y = y - 2;
+            if (y > 0) {
+                let y = y - 2;
+            }
+            else{
+                let y = y;
+            }
             do Player.draw();
         }
         //let xTips = tips.returnX();
@@ -92,9 +102,9 @@ class Player {
         return;
     }
 
-    function void drawWithBeer() {
+    function void drawWithBeer() { //tuda
 	var int memAddress; 
-	let memAddress = 16384 + y;
+	let memAddress = 16384 + x;
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -110,7 +120,7 @@ class Player {
     }
     function void drawWithoutBeer() {
 	var int memAddress; 
-	let memAddress = 16384+y;
+	let memAddress = 16384+x;
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -127,7 +137,7 @@ class Player {
 
     function void clearOnlyPlayer() {
 	var int memAddress; 
-	let memAddress = 16384+y;
+	let memAddress = 16384+x;
 	// column 0
 	do Memory.poke(memAddress, 0);
 	do Memory.poke(memAddress +32, 0);
