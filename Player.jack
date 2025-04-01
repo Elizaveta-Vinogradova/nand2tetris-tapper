@@ -1,11 +1,12 @@
 class Player {
     static int x, y;
     static boolean hasMug;
+    
 
     constructor Player new()
     {
-        let x = 360;
-        let y = 90;
+        let x = 200;
+        let y = 200;
         let hasMug = true;
         return this;
     }
@@ -46,7 +47,7 @@ class Player {
         if (Keyboard.keyPressed() = 131)  
         { 
             do Player.clearOnlyPlayer(x);
-            let y = y + 2;
+            let y = y + 2; 
             do Player.draw();
         }
         if (Keyboard.keyPressed() = 133)  
