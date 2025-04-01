@@ -3,7 +3,7 @@ class Tapper {
     static int lifecount;
     constructor Tapper new()
     {
-        let player = Player.new(360,90);
+        let player = Player.new(360, 90);
         let lifecount = 3;
         return this;
     }

@@ -27,32 +27,49 @@ class Player {
         //var Tips tips;
         //var Dancer dancer;
         //var int xTips, yTips;
-        if (Keyboard.keyPressed() = 32)
+        if ((Keyboard.keyPressed() = 32) & (hasMug))
         {
-            let mug = Mug.new(x ,y);
+            let mug = Mug.new(x , y);
             let hasMug = false;
+        }
+        else
+        {
+            if ((Keyboard.keyPressed() = 32) & (~hasMug))
+            {
+                let hasMug = true;
+            }
         }
         if (Keyboard.keyPressed() = 130)
         { 
-            do Player.clearOnlyPlayer(x);
-            let x = x - 2;
+            do Player.clearOnlyPlayer();
+            if (x > 0) {
+                let x = x - 2;
+            }
+            else{
+                let x = x;
+            }
             do Player.draw();
         }
         if (Keyboard.keyPressed() = 132)  
         { 
-            do Player.clearOnlyPlayer(x);
-            let x = x + 2;
+            do Player.clearOnlyPlayer();
+            if (x < 512) {
+                let x = x + 2;
+            }
+            else{
+                let x = x;
+            }
             do Player.draw();
         }
         if (Keyboard.keyPressed() = 131)  
         { 
-            do Player.clearOnlyPlayer(x);
+            do Player.clearOnlyPlayer();
             let y = y + 2; 
             do Player.draw();
         }
         if (Keyboard.keyPressed() = 133)  
         { 
-            do Player.clearOnlyPlayer(x);
+            do Player.clearOnlyPlayer();
             let y = y - 2;
             do Player.draw();
         }
@@ -68,16 +85,16 @@ class Player {
 
     function void draw() {
         if (hasMug) {
-            do Player.drawWithBeer(x); 
+            do Player.drawWithBeer(); 
         } else {
-            do Player.drawWithoutBeer(x);
+            do Player.drawWithoutBeer();
         }
         return;
     }
 
-    function void drawWithBeer(int location) {
+    function void drawWithBeer() {
 	var int memAddress; 
-	let memAddress = 16384+location;
+	let memAddress = 16384 + y;
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -91,9 +108,9 @@ class Player {
 	do Memory.poke(memAddress +288, 130);
 	return;
     }
-    function void drawWithoutBeer(int location) {
+    function void drawWithoutBeer() {
 	var int memAddress; 
-	let memAddress = 16384+location;
+	let memAddress = 16384+y;
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -108,9 +125,9 @@ class Player {
 	return;
     }
 
-    function void clearOnlyPlayer(int location) {
+    function void clearOnlyPlayer() {
 	var int memAddress; 
-	let memAddress = 16384+location;
+	let memAddress = 16384+y;
 	// column 0
 	do Memory.poke(memAddress, 0);
 	do Memory.poke(memAddress +32, 0);
