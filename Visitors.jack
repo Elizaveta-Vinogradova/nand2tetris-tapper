@@ -26,6 +26,7 @@ class Visitors {
     {
         var int xRows, yRows;
         var int xMug, yMug;
+        var Visitors visitor;
         while(wantsDrink)
         {
             let x = x + 3;
@@ -36,7 +37,7 @@ class Visitors {
                 if (wantsDrink)
                 {
                     do Tapper.deleteLife();
-                    do Visitors.dispose();
+                    do visitor.dispose();
                 }
             }
             let xMug = Mug.returnX();
