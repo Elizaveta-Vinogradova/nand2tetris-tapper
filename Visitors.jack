@@ -24,6 +24,8 @@ class Visitors {
     }
     method void move() 
     {
+        var xRows, yRows;
+        var int xMug, yMug;
         while(wantsDrink)
         {
             let x = x + 3;
@@ -37,7 +39,6 @@ class Visitors {
                     do Visitors.dispose();
                 }
             }
-            var int xMug, yMug;
             let xMug = Mug.returnX();
             let yMug = Mug.returnY();
             if (x = xMug)
