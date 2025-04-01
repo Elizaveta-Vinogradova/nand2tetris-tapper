@@ -26,7 +26,7 @@ push argument 0
 pop pointer 0
 push this 1
 return
-function Visitors.move 6
+function Visitors.move 7
 push argument 0
 pop pointer 0
 label WHILE_EXP0
@@ -60,9 +60,11 @@ call Visitors.dispose 1
 pop temp 0
 label IF_FALSE1
 label IF_FALSE0
-call Mug.returnX 0
+push local 6
+call Mug.returnX 1
 pop local 2
-call Mug.returnY 0
+push local 6
+call Mug.returnY 1
 pop local 3
 push this 0
 push local 2

@@ -11,6 +11,16 @@ not
 pop this 0
 push pointer 0
 return
+function Mug.returnX 0
+push argument 0
+pop pointer 0
+push this 1
+return
+function Mug.returnY 0
+push argument 0
+pop pointer 0
+push this 2
+return
 function Mug.dispose 0
 push argument 0
 pop pointer 0

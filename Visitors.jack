@@ -28,6 +28,7 @@ class Visitors {
         var int xMug, yMug;
         var Visitors visitor;
         var Rows rows;
+        var Mug mug;
         while(wantsDrink)
         {
             let x = x + 3;
@@ -41,8 +42,8 @@ class Visitors {
                     do visitor.dispose();
                 }
             }
-            let xMug = Mug.returnX();
-            let yMug = Mug.returnY();
+            let xMug = mug.returnX();
+            let yMug = mug.returnY();
             if (x = xMug)
             {
                 if (y = yMug)
