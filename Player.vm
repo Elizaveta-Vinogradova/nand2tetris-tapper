@@ -1,0 +1,349 @@
+function Player.new 0
+push constant 0
+call Memory.alloc 1
+pop pointer 0
+push argument 0
+pop argument 0
+push argument 1
+pop argument 1
+push constant 0
+not
+pop static 2
+push pointer 0
+return
+function Player.returnX 0
+push argument 0
+pop pointer 0
+push static 0
+return
+function Player.returnY 0
+push argument 0
+pop pointer 0
+push static 1
+return
+function Player.move 1
+push argument 0
+pop pointer 0
+call Keyboard.keyPressed 0
+push constant 32
+eq
+push static 2
+and
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push static 0
+push static 1
+call Mug.new 2
+pop local 0
+push constant 0
+pop static 2
+goto IF_END0
+label IF_FALSE0
+call Keyboard.keyPressed 0
+push constant 32
+eq
+push static 2
+not
+and
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+not
+pop static 2
+label IF_FALSE1
+label IF_END0
+call Keyboard.keyPressed 0
+push constant 130
+eq
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+call Player.clearOnlyPlayer 0
+pop temp 0
+push static 0
+push constant 0
+gt
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push static 0
+push constant 2
+sub
+pop static 0
+goto IF_END3
+label IF_FALSE3
+push static 0
+pop static 0
+label IF_END3
+call Player.draw 0
+pop temp 0
+label IF_FALSE2
+call Keyboard.keyPressed 0
+push constant 132
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+call Player.clearOnlyPlayer 0
+pop temp 0
+push static 0
+push constant 512
+lt
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push static 0
+push constant 2
+add
+pop static 0
+goto IF_END5
+label IF_FALSE5
+push static 0
+pop static 0
+label IF_END5
+call Player.draw 0
+pop temp 0
+label IF_FALSE4
+call Keyboard.keyPressed 0
+push constant 131
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+call Player.clearOnlyPlayer 0
+pop temp 0
+push static 1
+push constant 2
+add
+pop static 1
+call Player.draw 0
+pop temp 0
+label IF_FALSE6
+call Keyboard.keyPressed 0
+push constant 133
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+call Player.clearOnlyPlayer 0
+pop temp 0
+push static 1
+push constant 2
+sub
+pop static 1
+call Player.draw 0
+pop temp 0
+label IF_FALSE7
+push constant 0
+return
+function Player.draw 0
+push static 2
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+call Player.drawWithBeer 0
+pop temp 0
+goto IF_END0
+label IF_FALSE0
+call Player.drawWithoutBeer 0
+pop temp 0
+label IF_END0
+push constant 0
+return
+function Player.drawWithBeer 1
+push constant 16384
+push static 1
+add
+pop local 0
+push local 0
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 40
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 3640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 4079
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 3640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 40
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 68
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 130
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Player.drawWithoutBeer 1
+push constant 16384
+push static 1
+add
+pop local 0
+push local 0
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 40
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 56
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 16
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 3640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 3055
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 3640
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 40
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 68
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 130
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Player.clearOnlyPlayer 1
+push constant 16384
+push static 1
+add
+pop local 0
+push local 0
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
