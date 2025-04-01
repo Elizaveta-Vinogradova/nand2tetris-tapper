@@ -34,7 +34,7 @@ class Tapper {
         return;
     }
 
-    method void deleteLife()
+    function void deleteLife()
     {
         let lifecount = lifecount - 1;
         return;
