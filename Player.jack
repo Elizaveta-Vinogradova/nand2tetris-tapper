@@ -3,10 +3,10 @@ class Player {
     static boolean hasMug;
     
 
-    constructor Player new()
+    constructor Player new(int x, int y)
     {
-        let x = 0;
-        let y = 0;
+        let x = x;
+        let y = y;
         let hasMug = true;
         return this;
     }

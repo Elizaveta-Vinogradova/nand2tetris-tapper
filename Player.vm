@@ -2,10 +2,10 @@ function Player.new 0
 push constant 0
 call Memory.alloc 1
 pop pointer 0
-push constant 300
-pop static 0
-push constant 0
-pop static 1
+push argument 0
+pop argument 0
+push argument 1
+pop argument 1
 push constant 0
 not
 pop static 2

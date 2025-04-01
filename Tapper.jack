@@ -1,21 +1,11 @@
 class Tapper {
     field Player player;
-    field int score;
-    static int level;
-    field int time;
     static int lifecount;
-    static int flagForMoving;
     constructor Tapper new()
     {
-        let score = 0;
-        let level = 1;
-        let player = Player.new();
+        let player = Player.new(360,90);
         let lifecount = 3;
         return this;
-    }
-    function int level()
-    {
-        return level;
     }
     method void run() 
     {
