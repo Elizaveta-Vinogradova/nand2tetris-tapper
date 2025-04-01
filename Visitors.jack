@@ -26,14 +26,14 @@ class Visitors {
         var int xRows, yRows;
         var int xMug, yMug;
         var Visitors visitor;
-        var Rows rows;
         var Mug mug;
+        do Visitors.draw(x);
         while(wantsDrink)
         {
+            do Visitors.clean(x);
             let x = x + 3;
-            let xRows = rows.returnX();
-            let yRows = rows.returnY();
-            if (x = xRows)
+            do Visitors.draw(x);
+            if (x = 200)
             {
                 if (wantsDrink)
                 {
@@ -53,7 +53,9 @@ class Visitors {
         }
         while(~wantsDrink)
         {
+            do Visitors.clean(x);
             let x = x - 3;
+            do Visitors.draw(x);
             if (x = 0)
             {
                 do Memory.deAlloc(this);
@@ -79,6 +81,25 @@ class Visitors {
     	do Memory.poke(memAddress +320, 252);
     	do Memory.poke(memAddress +352, 72);
     	do Memory.poke(memAddress +384, 72);
+    	return;
+    }
+     function void clean(int location) {
+    	var int memAddress; 
+    	let memAddress = 16384+location;
+    	// column 0
+    	do Memory.poke(memAddress, 0);
+    	do Memory.poke(memAddress +32, 0);
+    	do Memory.poke(memAddress +64, 0);
+    	do Memory.poke(memAddress +96, 0);
+    	do Memory.poke(memAddress +128, 0);
+    	do Memory.poke(memAddress +160, 0);
+    	do Memory.poke(memAddress +192, 0);
+    	do Memory.poke(memAddress +224, 0);
+    	do Memory.poke(memAddress +256, 0);
+    	do Memory.poke(memAddress +288, 0);
+    	do Memory.poke(memAddress +320, 0);
+    	do Memory.poke(memAddress +352, 0);
+    	do Memory.poke(memAddress +384, 0);
     	return;
     }
     

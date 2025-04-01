@@ -41,6 +41,9 @@ push constant 0
 push constant 0
 call Visitors.new 2
 pop local 0
+push local 0
+call Visitors.move 1
+pop temp 0
 push this 0
 call Player.move 1
 pop temp 0

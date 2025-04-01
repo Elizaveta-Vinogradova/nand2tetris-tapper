@@ -42,8 +42,8 @@ class Player {
         if (Keyboard.keyPressed() = 130)
         { 
             do Player.clearOnlyPlayer();
-            if (x > 2) {
-                let x = x - 2;
+            if (x > 100) {
+                let x = x - 100;
             }
             else{
                 let x = x;
@@ -53,8 +53,8 @@ class Player {
         if (Keyboard.keyPressed() = 132)  
         { 
             do Player.clearOnlyPlayer();
-            if (x < 510) {
-                let x = x + 2;
+            if (x < 412) {
+                let x = x + 100;
             }
             else{
                 let x = x;
@@ -64,8 +64,8 @@ class Player {
         if (Keyboard.keyPressed() = 131)  
         { 
             do Player.clearOnlyPlayer();
-            if (y < 254) {
-                let y = y + 2;
+            if (y < 156) {
+                let y = y + 100;
             }
             else{
                 let y = y;
@@ -75,8 +75,8 @@ class Player {
         if (Keyboard.keyPressed() = 133)  
         { 
             do Player.clearOnlyPlayer();
-            if (y > 2) {
-                let y = y - 2;
+            if (y > 100) {
+                let y = y - 100;
             }
             else{
                 let y = y;

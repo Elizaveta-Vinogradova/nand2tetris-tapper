@@ -63,13 +63,13 @@ label IF_TRUE2
 call Player.clearOnlyPlayer 0
 pop temp 0
 push static 0
-push constant 0
+push constant 100
 gt
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
 push static 0
-push constant 2
+push constant 100
 sub
 pop static 0
 goto IF_END3
@@ -89,13 +89,13 @@ label IF_TRUE4
 call Player.clearOnlyPlayer 0
 pop temp 0
 push static 0
-push constant 512
+push constant 412
 lt
 if-goto IF_TRUE5
 goto IF_FALSE5
 label IF_TRUE5
 push static 0
-push constant 2
+push constant 100
 add
 pop static 0
 goto IF_END5
@@ -115,13 +115,13 @@ label IF_TRUE6
 call Player.clearOnlyPlayer 0
 pop temp 0
 push static 1
-push constant 256
+push constant 156
 lt
 if-goto IF_TRUE7
 goto IF_FALSE7
 label IF_TRUE7
 push static 1
-push constant 2
+push constant 100
 add
 pop static 1
 goto IF_END7
@@ -141,13 +141,13 @@ label IF_TRUE8
 call Player.clearOnlyPlayer 0
 pop temp 0
 push static 1
-push constant 0
+push constant 100
 gt
 if-goto IF_TRUE9
 goto IF_FALSE9
 label IF_TRUE9
 push static 1
-push constant 2
+push constant 100
 sub
 pop static 1
 goto IF_END9
