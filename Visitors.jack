@@ -11,7 +11,6 @@ class Visitors {
         let y = y;
         let wantsDrink = true;
         let hasEmptyMug = true;
-        let howOften = Tapper.level();
         return this;
     }
     method int returnX()
