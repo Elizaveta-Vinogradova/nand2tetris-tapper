@@ -26,7 +26,11 @@ push argument 0
 pop pointer 0
 push this 1
 return
+<<<<<<< HEAD
 function Visitors.move 6
+=======
+function Visitors.move 5
+>>>>>>> ce67a4c08bf54c7f21efd5be223394700d50bcbb
 push argument 0
 pop pointer 0
 label WHILE_EXP0
