@@ -5,7 +5,7 @@ class Player {
 
     constructor Player new()
     {
-        let x = 300;
+        let x = 0;
         let y = 0;
         let hasMug = true;
         return this;
