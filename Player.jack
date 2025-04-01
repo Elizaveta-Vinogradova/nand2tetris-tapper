@@ -1,6 +1,6 @@
 class Player {
-    field int x, y;
-    field boolean hasMug;
+    static int x, y;
+    static boolean hasMug;
 
     constructor Player new()
     {
@@ -65,7 +65,7 @@ class Player {
         return;
     }
 
-    method void draw() {
+    function void draw() {
         if (hasMug) {
             do Player.drawWithBeer(x); 
         } else {

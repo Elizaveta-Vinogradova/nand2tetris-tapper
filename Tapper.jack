@@ -23,7 +23,7 @@ class Tapper {
         while (lifecount > 0) {
             do rows.drawRow();
             do update();
-            do player.draw();
+            do Player.draw();
         }
         do dispose();
         return;
