@@ -24,7 +24,7 @@ class Visitors {
     }
     method void move() 
     {
-        var xRows, yRows;
+        var int xRows, yRows;
         var int xMug, yMug;
         while(wantsDrink)
         {
@@ -45,7 +45,7 @@ class Visitors {
             {
                 if (y = yMug)
                 {
-                    let wantsDrink = false
+                    let wantsDrink = false;
                 }
             }
         }
