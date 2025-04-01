@@ -10,6 +10,16 @@ class Player {
         return this;
     }
 
+    method int returnX()
+    {
+        return x;
+    }
+
+    method int returnY()
+    {
+        return y;
+    }
+    
     method void move() 
     {
         var Mug mug;

@@ -19,7 +19,7 @@ call Memory.deAlloc 1
 pop temp 0
 push constant 0
 return
-function Mug.update 4
+function Mug.update 5
 push argument 0
 pop pointer 0
 push this 0
@@ -27,9 +27,8 @@ not
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push pointer 0
 push this 1
-call Mug.EmptyMag 2
+call Mug.EmptyMag 1
 pop temp 0
 call rows.returnX 0
 pop local 2
@@ -46,9 +45,11 @@ add
 pop this 1
 goto WHILE_EXP0
 label WHILE_END0
-call Player.returnX 0
+push local 3
+call Player.returnX 1
 pop local 0
-call Player.returnY 0
+push local 3
+call Player.returnY 1
 pop local 1
 push this 1
 push local 0
@@ -63,7 +64,8 @@ goto IF_FALSE1
 label IF_TRUE1
 call Tapper.deleteLife 0
 pop temp 0
-call Mug.dispose 0
+push local 4
+call Mug.dispose 1
 pop temp 0
 label IF_FALSE1
 goto IF_END0
@@ -84,7 +86,8 @@ sub
 pop this 1
 goto WHILE_EXP1
 label WHILE_END1
-call Mug.dispose 0
+push local 4
+call Mug.dispose 1
 pop temp 0
 label IF_END0
 push constant 0

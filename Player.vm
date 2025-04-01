@@ -10,6 +10,16 @@ push constant 0
 pop this 2
 push pointer 0
 return
+function Player.returnX 0
+push argument 0
+pop pointer 0
+push this 0
+return
+function Player.returnY 0
+push argument 0
+pop pointer 0
+push this 1
+return
 function Player.move 5
 push argument 0
 pop pointer 0

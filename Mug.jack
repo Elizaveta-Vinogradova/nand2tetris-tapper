@@ -19,21 +19,22 @@ class Mug
 	{
 		var int tapperX, tapperY;
 	    var int xRows;
+		var Player player;
 		var Mug mug;
 		if (~ifFull) 
         {
-            do EmptyMag(x);
+            do Mug.EmptyMag(x);
 			let xRows = rows.returnX();
 			while (~(x = xRows))
 			{
 				let x = x + speed;
 			}
-			let tapperX = Player.returnX();
-			let tapperY = Player.returnY();
+			let tapperX = player.returnX();
+			let tapperY = player.returnY();
 			if (~(x = tapperX | y = tapperY))
 			{
 				do Tapper.deleteLife();
-				do Mug.dispose();
+				do mug.dispose();
 			}
         } 
 		else
@@ -43,7 +44,7 @@ class Mug
 			{
 				let x = x - speed;
 			}
-			do Mug.dispose();
+			do mug.dispose();
 		}
 		return;
 	}
