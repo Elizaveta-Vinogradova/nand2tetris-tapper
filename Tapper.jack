@@ -3,7 +3,7 @@ class Tapper {
     field int score;
     field int level;
     field int time;
-    field int lifecount;
+    static int lifecount;
     constructor Tapper new()
     {
         let score = 0;
@@ -12,7 +12,7 @@ class Tapper {
         let lifecount = 3;
         return this;
     }
-    method int level()
+    function int level()
     {
         return level;
     }
