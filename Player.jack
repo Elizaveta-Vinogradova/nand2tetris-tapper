@@ -12,9 +12,11 @@ class Player {
 
     method void move() 
     {
+        var Mug mug;
+        var Tips xTips, yTips;
         if (Keyboard.keyPressed() = 32)
         {
-            let Mug = Mug.new(x ,y);
+            let mug = Mug.new(x ,y);
         }
         if (Keyboard.keyPressed() = 130)
         { 
@@ -44,9 +46,9 @@ class Player {
 
     method void draw() {
         if (hasMug) {
-            do drawWithBeer(); 
+            do Player.drawWithBeer(x); 
         } else {
-            do drawWithoutBeer();
+            do Player.drawWithoutBeer(x);
         }
         return;
     }
