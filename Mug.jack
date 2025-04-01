@@ -9,7 +9,14 @@ class Mug
         let ifFull = true;
         return this;
     }
-    
+    method int returnX()
+	{
+		return x;
+	}
+	method int returnY()
+	{
+		return y;
+	}
     method void dispose()
     {
         do Memory.deAlloc(this);
