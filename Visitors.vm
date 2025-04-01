@@ -26,7 +26,7 @@ push argument 0
 pop pointer 0
 push this 1
 return
-function Visitors.move 4
+function Visitors.move 6
 push argument 0
 pop pointer 0
 label WHILE_EXP0
@@ -37,9 +37,11 @@ push this 0
 push constant 3
 add
 pop this 0
-call Rows.returnX 0
+push local 5
+call Rows.returnX 1
 pop local 0
-call Rows.returnY 0
+push local 5
+call Rows.returnY 1
 pop local 1
 push this 0
 push local 0
@@ -53,7 +55,8 @@ goto IF_FALSE1
 label IF_TRUE1
 call Tapper.deleteLife 0
 pop temp 0
-call Visitors.dispose 0
+push local 4
+call Visitors.dispose 1
 pop temp 0
 label IF_FALSE1
 label IF_FALSE0

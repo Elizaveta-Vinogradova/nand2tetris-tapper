@@ -13,7 +13,8 @@ class Player {
     method void move() 
     {
         var Mug mug;
-        var Tips xTips, yTips;
+        var Tips tips;
+        var Dancer dancer;
         if (Keyboard.keyPressed() = 32)
         {
             let mug = Mug.new(x ,y);
@@ -34,12 +35,12 @@ class Player {
         { 
             let y = y - 2;
         }
-        let xTips = Tips.returnX();
-        let yTips = Tips.returnY();
+        let xTips = tips.returnX();
+        let yTips = tips.returnY();
         if (x = xTips){
             if (y = yTips){
-            do Tips.dispose();
-            do Dancer.dance();
+            do tips.dispose();
+            do dancer.dance();
             }} 
         return;
     }

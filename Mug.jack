@@ -17,16 +17,17 @@ class Mug
     }
     method void update()
 	{
+		var int tapperX, tapperY;
 	    var int xRows;
+		var Mug mug;
 		if (~ifFull) 
         {
-            do Mug.EmptyMag(x);
-			let xRows = Rows.returnX();
+            do mug.EmptyMag(x);
+			let xRows = do Rows.returnX();
 			while (~(x = xRows))
 			{
 				let x = x + speed;
 			}
-			var int tapperX, tapperY;
 			let tapperX = Player.returnX();
 			let tapperY = Player.returnY();
 			if (~(x = tapperX | y = tapperY))

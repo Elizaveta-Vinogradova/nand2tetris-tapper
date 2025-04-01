@@ -27,11 +27,12 @@ class Visitors {
         var int xRows, yRows;
         var int xMug, yMug;
         var Visitors visitor;
+        var Rows rows;
         while(wantsDrink)
         {
             let x = x + 3;
-            let xRows = Rows.returnX();
-            let yRows = Rows.returnY();
+            let xRows = rows.returnX();
+            let yRows = rows.returnY();
             if (x = xRows)
             {
                 if (wantsDrink)
