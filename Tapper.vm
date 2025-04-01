@@ -30,8 +30,8 @@ pop temp 0
 push pointer 0
 call Tapper.update 1
 pop temp 0
-push pointer 0
-call Tapper.draw 1
+push this 0
+call Player.draw 1
 pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
@@ -57,14 +57,6 @@ push static 1
 push constant 1
 sub
 pop static 1
-push constant 0
-return
-function Tapper.draw 0
-push argument 0
-pop pointer 0
-push this 0
-call Player.draw 1
-pop temp 0
 push constant 0
 return
 function Tapper.dispose 0

@@ -23,7 +23,7 @@ class Tapper {
         while (lifecount > 0) {
             do rows.drawRow();
             do update();
-            do draw();
+            do player.draw();
         }
         do dispose();
         return;
@@ -40,11 +40,6 @@ class Tapper {
     function void deleteLife()
     {
         let lifecount = lifecount - 1;
-        return;
-    }
-    
-    method void draw() {
-        do player.draw();
         return;
     }
     method void dispose() {
