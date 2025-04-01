@@ -12,8 +12,6 @@ pop this 3
 push constant 0
 not
 pop this 4
-call Tapper.level 0
-pop this 5
 push pointer 0
 return
 function Visitors.returnX 0
