@@ -22,8 +22,8 @@ class Mug
 		var Mug mug;
 		if (~ifFull) 
         {
-            do mug.EmptyMag(x);
-			let xRows = do rows.returnX();
+            do EmptyMag(x);
+			let xRows = rows.returnX();
 			while (~(x = xRows))
 			{
 				let x = x + speed;
