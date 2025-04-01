@@ -1,12 +1,14 @@
 class Player {
     field int x, y;
     field boolean hasMug;
+    static boolean moved;
 
     constructor Player new()
     {
-        let x = 0;
-        let y = 0;
+        let x = 360;
+        let y = 90;
         let hasMug = false;
+        let moved = false;
         return this;
     }
 
@@ -23,9 +25,9 @@ class Player {
     method void move() 
     {
         var Mug mug;
-        var Tips tips;
-        var Dancer dancer;
-        var int xTips, yTips;
+        //var Tips tips;
+        //var Dancer dancer;
+        //var int xTips, yTips;
         if (Keyboard.keyPressed() = 32)
         {
             let mug = Mug.new(x ,y);
@@ -33,26 +35,34 @@ class Player {
         if (Keyboard.keyPressed() = 130)
         { 
             let x = x - 2;
+            let moved = true;
         }
         if (Keyboard.keyPressed() = 132)  
         { 
             let x = x + 2;
+            let moved = true;
         }
         if (Keyboard.keyPressed() = 131)  
         { 
             let y = y + 2;
+            let moved = true;
         }
         if (Keyboard.keyPressed() = 133)  
         { 
             let y = y - 2;
+            let moved = true;
         }
-        let xTips = tips.returnX();
-        let yTips = tips.returnY();
-        if (x = xTips){
-            if (y = yTips){
-            do tips.dispose();
-            do dancer.dance();
-            }} 
+        if (moved) {
+            do Player.clearOnlyPlayer(x);
+            let moved = false;
+        }
+        //let xTips = tips.returnX();
+        //let yTips = tips.returnY();
+        //if (x = xTips){
+        //    if (y = yTips){
+        //    do tips.dispose();
+        //    do dancer.dance();
+        //    }} 
         return;
     }
 
@@ -95,6 +105,39 @@ class Player {
 	do Memory.poke(memAddress +224, 40);
 	do Memory.poke(memAddress +256, 68);
 	do Memory.poke(memAddress +288, 130);
+	return;
+    }
+
+    function void clearOnlyPlayer(int location) {
+	var int memAddress; 
+	let memAddress = 16384+location;
+	// column 0
+	do Memory.poke(memAddress, 0);
+	do Memory.poke(memAddress +32, 0);
+	do Memory.poke(memAddress +64, 0);
+	do Memory.poke(memAddress +96, 0);
+	do Memory.poke(memAddress +128, 0);
+	do Memory.poke(memAddress +160, 0);
+	do Memory.poke(memAddress +192, 0);
+	do Memory.poke(memAddress +224, 0);
+	do Memory.poke(memAddress +256, 0);
+	do Memory.poke(memAddress +288, 0);
+	return;
+    }
+    function void clearOnlyPlayerWithoutBeer(int location) {
+	var int memAddress; 
+	let memAddress = 16384+location;
+	// column 0
+	do Memory.poke(memAddress, 0);
+	do Memory.poke(memAddress +32, 0);
+	do Memory.poke(memAddress +64, 0);
+	do Memory.poke(memAddress +96, 0);
+	do Memory.poke(memAddress +128, 0);
+	do Memory.poke(memAddress +160, 0);
+	do Memory.poke(memAddress +192, 0);
+	do Memory.poke(memAddress +224, 0);
+	do Memory.poke(memAddress +256, 0);
+	do Memory.poke(memAddress +288, 0);
 	return;
     }
 }

@@ -15,7 +15,7 @@ return
 function Tapper.level 0
 push static 0
 return
-function Tapper.run 0
+function Tapper.run 1
 push argument 0
 pop pointer 0
 label WHILE_EXP0
@@ -24,6 +24,9 @@ push constant 0
 gt
 not
 if-goto WHILE_END0
+push local 0
+call Rows.drawRow 1
+pop temp 0
 push pointer 0
 call Tapper.update 1
 pop temp 0
@@ -40,9 +43,6 @@ return
 function Tapper.update 1
 push argument 0
 pop pointer 0
-push constant 20
-call Sys.Wait 1
-pop temp 0
 push constant 0
 push constant 0
 call Visitors.new 2
@@ -62,8 +62,6 @@ return
 function Tapper.draw 0
 push argument 0
 pop pointer 0
-call Screen.clearScreen 0
-pop temp 0
 push this 0
 call Player.draw 1
 pop temp 0

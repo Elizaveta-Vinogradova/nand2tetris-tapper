@@ -4,6 +4,7 @@ class Tapper {
     static int level;
     field int time;
     static int lifecount;
+    static int flagForMoving;
     constructor Tapper new()
     {
         let score = 0;
@@ -18,7 +19,9 @@ class Tapper {
     }
     method void run() 
     {
+        var Rows rows;
         while (lifecount > 0) {
+            do rows.drawRow();
             do update();
             do draw();
         }
@@ -28,9 +31,9 @@ class Tapper {
 
     method void update() {
         var Visitors visitor;
-        do Sys.Wait(20);
         let visitor = Visitors.new(0, 0);
         do player.move();
+        
         return;
     }
 
@@ -39,9 +42,8 @@ class Tapper {
         let lifecount = lifecount - 1;
         return;
     }
-
+    
     method void draw() {
-        do Screen.clearScreen();
         do player.draw();
         return;
     }
