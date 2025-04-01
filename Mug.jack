@@ -17,10 +17,10 @@ class Mug
     }
     method void update()
 	{
+	    var int xRows;
 		if (~ifFull) 
         {
             do Mug.EmptyMag(x);
-			var int xRows;
 			let xRows = Rows.returnX();
 			while (~(x = xRows))
 			{
