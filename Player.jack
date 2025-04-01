@@ -15,6 +15,7 @@ class Player {
         var Mug mug;
         var Tips tips;
         var Dancer dancer;
+        var int xTips, yTips;
         if (Keyboard.keyPressed() = 32)
         {
             let mug = Mug.new(x ,y);

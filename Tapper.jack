@@ -27,6 +27,7 @@ class Tapper {
     }
 
     method void update() {
+        let visitor = Visitors.new(0, 0);
         do Sys.Wait(20);
         Visitors.new();
         do player.move();
