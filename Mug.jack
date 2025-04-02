@@ -2,21 +2,21 @@ class Mug
 {
     field boolean ifFull;
 	field int x, y, speed;
-    constructor Mug new(int x, int y)
+    constructor Mug new(int level)
     {
-		let x = x;
-		let y = y;
+		if (level = 1)
+		{ 
+			let x = ;
+			let y = ;
+		}
+		else
+		{
+			let x = ;
+			let y = ;
+		}
         let ifFull = true;
         return this;
     }
-    method int returnX()
-	{
-		return x;
-	}
-	method int returnY()
-	{
-		return y;
-	}
     method void dispose()
     {
         do Memory.deAlloc(this);
@@ -24,10 +24,10 @@ class Mug
     }
     method void update()
 	{
-		var int tapperX, tapperY;
 	    var int xRows;
 		var Player player;
 		var Mug mug;
+		var int level;
 		if (~ifFull) 
         {
             do Mug.EmptyMag(x);
@@ -36,8 +36,6 @@ class Mug
 			{
 				let x = x + speed;
 			}
-			let tapperX = player.returnX();
-			let tapperY = player.returnY();
 			if (~(x = tapperX | y = tapperY))
 			{
 				do Tapper.deleteLife();
