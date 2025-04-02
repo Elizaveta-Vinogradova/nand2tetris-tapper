@@ -16,7 +16,7 @@ class Player {
         //var int xTips, yTips;
         if ((Keyboard.keyPressed() = 32) & (hasMug))
         {
-            let mug = Mug.new(x , y);
+            let mug = Mug.new(0,0);
             let hasMug = false;
         }
         else
@@ -47,7 +47,7 @@ class Player {
 
 
 
-    function void clear(int xForRow) {
+    function void clear(int location) {
 	var int memAddress; 
         let memAddress = 16384+location;
         // column 0
