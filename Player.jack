@@ -1,24 +1,13 @@
 class Player {
-    static int x, y;
     static int level;
     static boolean hasMug;
     
     //22010 для нижней!!!!!! 18904 для верхней
-    constructor Player new(int x, int y)
+    constructor Player new()
     {
-        let x = x;
-        let y = y;
         let level = 1;
         let hasMug = true;
         return this;
-    }
-    method int returnX()
-    {
-        return x;
-    }
-    method int returnY()
-    {
-        return y;
     }
     method int returnLevel()
     {
