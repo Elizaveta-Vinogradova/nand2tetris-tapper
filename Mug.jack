@@ -82,6 +82,7 @@ class Mug
 		// 		// }
 		// 	}
 		// }
+		var int level;
 		var int counter;
 		var int arr;
 		let counter = 0;
@@ -105,6 +106,34 @@ class Mug
 			do Sys.wait(1000);
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
+		}
+
+		let counter = 0;
+		while(counter < 4)
+		{
+			do Sys.wait(1000);
+			if (levelMug = 2)
+			{
+				do Sys.wait(1000);
+				let arr = counterForMugsForLower[3 - counter];
+				do Sys.wait(1000);
+			}
+			else
+			{
+				do Sys.wait(1000);
+				let arr = counterForMugsForUpper[3 - counter];
+				do Sys.wait(1000);
+			}
+			
+			do Mug.emptyMug(arr);
+			do Sys.wait(1000);
+			do Mug.clearMug(arr);
+			let counter = counter + 1;
+		}
+		let level = Player.returnLevel();
+		if (~(levelMug = level))
+		{
+			do Tapper.deleteLife();
 		}
 		return;
 	}

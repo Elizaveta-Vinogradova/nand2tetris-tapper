@@ -22,10 +22,10 @@ class Tapper {
     method void update() {
         var Mug mug;
         var int level;
+        var Visitors visitor;
         let level = Player.returnLevel();
-        //var Visitors visitor;
-        //let visitor = Visitors.new(1);
-        //do visitor.move();
+        let visitor = Visitors.new(1);
+        do visitor.move();
         do player.move();
         return;
     }

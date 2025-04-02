@@ -30,11 +30,17 @@ call Tapper.dispose 1
 pop temp 0
 push constant 0
 return
-function Tapper.update 2
+function Tapper.update 3
 push argument 0
 pop pointer 0
 call Player.returnLevel 0
 pop local 1
+push constant 1
+call Visitors.new 1
+pop local 2
+push local 2
+call Visitors.move 1
+pop temp 0
 push this 0
 call Player.move 1
 pop temp 0

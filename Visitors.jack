@@ -1,70 +1,59 @@
 class Visitors {
-    field int x, y;
-    field int speed;
-    field boolean wantsDrink;
-    field boolean hasEmptyMug;
-    field int howOften;
+    field int level;
 
-    constructor Visitors new(int x, int y)
+    constructor Visitors new(int currentLevel)
     {
-        let x = x;
-        let y = y;
-        let wantsDrink = true;
-        let hasEmptyMug = true;
+        let currentLevel = level;
         return this;
     }
     
-    method int returnX()
-    {
-        return x;
-    }
-
     method void move() 
     {
-        var int xRows, yRows;
-        var int xMug;
-        var Visitors visitor;
-        var Mug mug;
+        //var int xRows, yRows;
+        //var int xMug;
+        //var Visitors visitor;
+        //var Mug mug;
         //do Visitors.draw(1000);
-        if (Keyboard.keyPressed() = 130)  
-        {
-            do Visitors.draw(1000);
-        }
-        while(wantsDrink)
-        {
-            do Visitors.clean(1000);
-            let x = x + 3;
-            do Visitors.draw(1000);
-            if (x = 200)
-            {
-                if (wantsDrink)
-                {
-                    do Tapper.deleteLife();
-                    do visitor.dispose();
-                }
-            }
-            let xMug = mug.returnX();
-            if (x = xMug)
-            {
-                let wantsDrink = false;
-            }
-        }
-        while(~wantsDrink)
-        {
-            do Visitors.clean(1000);
-            let x = x - 3;
-            do Visitors.draw(1000);
-            if (x = 0)
-            {
-                do Memory.deAlloc(this);
-            }
-        }
+        //if (Keyboard.keyPressed() = 130)  
+        //{
+        //    do Visitors.draw(1000);
+        //}
+        //while(wantsDrink)
+        //{
+        //   do Visitors.clean(1000);
+        //    let x = x + 3;
+        //    do Visitors.draw(1000);
+        //    if (x = 200)
+        //    {
+        //        if (wantsDrink)
+        //        {
+        //            do Tapper.deleteLife();
+        //            do visitor.dispose();
+        //        }
+        //    }
+        //    let xMug = mug.returnX();
+        //    if (x = xMug)
+        //    {
+        //        let wantsDrink = false;
+        //    }
+        // }
+        // while(~wantsDrink)
+        // {
+        //     do Visitors.clean(1000);
+        //     let x = x - 3;
+        //     do Visitors.draw(1000);
+        //     if (x = 0)
+        //     {
+        //         do Memory.deAlloc(this);
+        //     }
+        // }
+        do Visitors.draw(4890); //800
         return;
     }
 
     function void draw(int location) {
         var int memAddress; 
-        let memAddress = 16384;
+        let memAddress = 16384 + location;
         // column 0
         do Memory.poke(memAddress +128, -2048);
         do Memory.poke(memAddress +160, -2048);
@@ -131,7 +120,7 @@ class Visitors {
     }
     function void clean(int location) {
         var int memAddress; 
-        let memAddress = 16384+location;
+        let memAddress = 16384 + location;
         // column 0
         do Memory.poke(memAddress +128, 0);
         do Memory.poke(memAddress +160, 0);
