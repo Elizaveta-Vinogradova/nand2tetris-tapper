@@ -1,39 +1,28 @@
 class Player {
     static int level;
-    static boolean hasMug;
     
     //22010 для нижней!!!!!! 18904 для верхней
     constructor Player new()
     {
         let level = 1;
-        let hasMug = true;
         return this;
     }
     function int returnLevel()
     {
         return level;
     }
-    method boolean returnMug()
-	{
-		return hasMug;
-	}
     method void move() 
     {
         var Mug mug;
         //var Tips tips;
         //var Dancer dancer;
         //var int xTips, yTips;
-        if ((Keyboard.keyPressed() = 32) & (hasMug))
+        if ((Keyboard.keyPressed() = 32))
         {
-            let hasMug = false;
+            let mug = Mug.new(level);
+            do mug.move();
         }
-        else
-        {
-            if ((Keyboard.keyPressed() = 32) & (~hasMug))
-            {
-                let hasMug = true;
-            }
-        }
+
         if (Keyboard.keyPressed() = 133)  
         { 
             do Player.clear(5626);
@@ -50,12 +39,6 @@ class Player {
         } 
         return;
     }
-
-    function void draw() {
-        return;
-    }
-
-
 
     function void clear(int location) {
 	var int memAddress; 

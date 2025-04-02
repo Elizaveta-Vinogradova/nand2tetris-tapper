@@ -4,6 +4,7 @@ class Mug
 	field int getX;
 	field int y;
 	field int levelMug;
+	field Array counterForMugsForUpper, counterForMugsForLower;
     constructor Mug new(int level)
     {
 		if (level = 1)
@@ -17,6 +18,18 @@ class Mug
 		let getX = 200;
 		let levelMug = Player.returnLevel();
         let ifFull = true;
+
+		let counterForMugsForUpper = Array.new(4);
+		let counterForMugsForUpper[0] = 1616;
+		let counterForMugsForUpper[1] = 1612;
+		let counterForMugsForUpper[2] = 1608;
+		let counterForMugsForUpper[3] = 1601;
+
+		let counterForMugsForLower = Array.new(4);
+		let counterForMugsForLower[0] = 4500;
+		let counterForMugsForLower[1] = 4495;
+		let counterForMugsForLower[2] = 4487;
+		let counterForMugsForLower[3] = 4480; 
         return this;
     }
 
@@ -28,50 +41,77 @@ class Mug
 
     method void dispose()
     {
-		do Mug.clearMug(getX, y);
+		do Mug.clearMug(1);
         do Memory.deAlloc(this);
         return;
     }
     method void move()
 	{
-		var Player player;
-		var Mug mug;
-		var int levelPlayer;
-		var Visitors visitor;
-		var int location;
-		if (~ifFull) 
-        {
-			while (getX < 512)
-			{
-				do Mug.emptyMug(getX, y);
-				do Mug.clearMug(getX, y);
-				let getX = getX + 16;
-			}
-			let levelPlayer = Player.returnLevel();
-			if (~(levelPlayer = levelMug))
-			{
-				do Tapper.deleteLife();
-			}
-        } 
-		else
+		// var Player player;
+		// var Mug mug;
+		// var int levelPlayer;
+		// var Visitors visitor;
+		// var int location;
+		// if (~ifFull) 
+        // {
+		// 	if (getX < 512)
+		// 	{
+		// 		do Mug.emptyMug(getX, y);
+		// 		do Mug.clearMug(getX, y);
+		// 		let getX = getX + 16;
+		// 	}
+		// 	else
+		// 	{
+		// 		let levelPlayer = Player.returnLevel();
+		// 		if (~(levelPlayer = levelMug))
+		// 		{
+		// 			do Tapper.deleteLife();
+		// 		}
+		// 	}
+        // } 
+		// else
+		// {
+		// 	if (getX > 0)
+		// 	{
+		// 		do Mug.fullMug(getX, y);
+		// 		do Mug.clearMug(getX, y);
+		// 		let getX = getX - 16;
+		// 		//let location = visitor.returnX();
+		// 		// if (getX = location)
+		// 		// {
+		// 		// }
+		// 	}
+		// }
+		var int counter;
+		var int arr;
+		let counter = 0;
+		while(counter < 4)
 		{
-			while (getX > 0)
+			do Sys.wait(1000);
+			if (levelMug = 2)
 			{
-				do Mug.fullMug(getX, y);
-				do Mug.clearMug(getX, y);
-				let getX = getX - 16;
-				//let location = visitor.returnX();
-				// if (getX = location)
-				// {
-				// }
+				do Sys.wait(1000);
+				let arr = counterForMugsForLower[counter];
+				do Sys.wait(1000);
 			}
+			else
+			{
+				do Sys.wait(1000);
+				let arr = counterForMugsForUpper[counter];
+				do Sys.wait(1000);
+			}
+			
+			do Mug.fullMug(arr);
+			do Sys.wait(1000);
+			do Mug.clearMug(arr);
+			let counter = counter + 1;
 		}
 		return;
 	}
     
-    function void fullMug(int x, int y) {
+    function void fullMug(int x) {
 	var int memAddress; 
-	let memAddress = 16384 + 32 + x/16 + y;
+	let memAddress = 16384 + x;
 	// column 0
 	do Memory.poke(memAddress, 1023);
 	do Memory.poke(memAddress +32, 8191);
@@ -83,9 +123,9 @@ class Mug
 	return;
 }
     
-    function void emptyMug(int x, int y) {
+    function void emptyMug(int x) {
 	var int memAddress; 
-	let memAddress = 16384 + x/16 + y;
+	let memAddress = 16384 + x;
 	// column 0
 	do Memory.poke(memAddress, 903);
 	do Memory.poke(memAddress +32, 8071);
@@ -96,9 +136,9 @@ class Mug
 	do Memory.poke(memAddress +192, 252);
 	return;
 	}
-	function void clearMug(int x, int y) {
+	function void clearMug(int x) {
 	var int memAddress; 
-	let memAddress = 16384 + x/16 + y + 32;
+	let memAddress = 16384 + x;
 	// column 0
 	do Memory.poke(memAddress, 0);
 	do Memory.poke(memAddress +32, 0);

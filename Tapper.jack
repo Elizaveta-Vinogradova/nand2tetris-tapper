@@ -20,18 +20,13 @@ class Tapper {
     }
 
     method void update() {
+        var Mug mug;
+        var int level;
+        let level = Player.returnLevel();
         //var Visitors visitor;
         //let visitor = Visitors.new(1);
         //do visitor.move();
         do player.move();
-        var boolean mug;
-        var Mug beer;
-        let mug = player.returnMug();
-        if (mug)
-        {
-            let beer = Mug.new(level);
-            do beer.move(); 
-        }
         return;
     }
 
@@ -41,6 +36,7 @@ class Tapper {
         return;
     }
     method void dispose() {
+        
         do Memory.deAlloc(this);
         return;
     }

@@ -4,18 +4,10 @@ call Memory.alloc 1
 pop pointer 0
 push constant 1
 pop static 0
-push constant 0
-not
-pop static 1
 push pointer 0
 return
 function Player.returnLevel 0
 push static 0
-return
-function Player.returnMug 0
-push argument 0
-pop pointer 0
-push static 1
 return
 function Player.move 1
 push argument 0
@@ -23,35 +15,22 @@ pop pointer 0
 call Keyboard.keyPressed 0
 push constant 32
 eq
-push static 1
-and
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push constant 0
-pop static 1
-goto IF_END0
+push static 0
+call Mug.new 1
+pop local 0
+push local 0
+call Mug.move 1
+pop temp 0
 label IF_FALSE0
-call Keyboard.keyPressed 0
-push constant 32
-eq
-push static 1
-not
-and
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push constant 0
-not
-pop static 1
-label IF_FALSE1
-label IF_END0
 call Keyboard.keyPressed 0
 push constant 133
 eq
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
 push constant 5626
 call Player.clear 1
 pop temp 0
@@ -63,13 +42,13 @@ call Player.drawSPivom 1
 pop temp 0
 push constant 2
 pop static 0
-label IF_FALSE2
+label IF_FALSE1
 call Keyboard.keyPressed 0
 push constant 131
 eq
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
 push constant 5626
 call Player.clear 1
 pop temp 0
@@ -81,10 +60,7 @@ call Player.drawSPivom 1
 pop temp 0
 push constant 1
 pop static 0
-label IF_FALSE3
-push constant 0
-return
-function Player.draw 0
+label IF_FALSE2
 push constant 0
 return
 function Player.clear 1
