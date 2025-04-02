@@ -82,51 +82,53 @@ class Mug
 		// 		// }
 		// 	}
 		// }
+		var boolean hasReachedVisitor, hasReachedTapper;
 		var int level;
 		var int counter;
 		var int arr;
 		let counter = 0;
+		let hasReached = false;
 		while(counter < 4)
 		{
-			do Sys.wait(1000);
+			do Sys.wait(100);
 			if (levelMug = 2)
 			{
-				do Sys.wait(1000);
+				do Sys.wait(100);
 				let arr = counterForMugsForLower[counter];
-				do Sys.wait(1000);
+				do Sys.wait(100);
 			}
 			else
 			{
-				do Sys.wait(1000);
+				do Sys.wait(100);
 				let arr = counterForMugsForUpper[counter];
-				do Sys.wait(1000);
+				do Sys.wait(100);
 			}
 			
 			do Mug.fullMug(arr);
-			do Sys.wait(1000);
+			do Sys.wait(100);
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
 		}
-
+		hasReached = true;
 		let counter = 0;
 		while(counter < 4)
 		{
-			do Sys.wait(1000);
+			do Sys.wait(100);
 			if (levelMug = 2)
 			{
-				do Sys.wait(1000);
+				do Sys.wait(100);
 				let arr = counterForMugsForLower[3 - counter];
-				do Sys.wait(1000);
+				do Sys.wait(100);
 			}
 			else
 			{
-				do Sys.wait(1000);
+				do Sys.wait(100);
 				let arr = counterForMugsForUpper[3 - counter];
-				do Sys.wait(1000);
+				do Sys.wait(100);
 			}
 			
 			do Mug.emptyMug(arr);
-			do Sys.wait(1000);
+			do Sys.wait(100);
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
 		}

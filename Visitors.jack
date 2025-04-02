@@ -7,7 +7,7 @@ class Visitors {
         return this;
     }
     
-    method void move() 
+    method void draw() 
     {
         //var int xRows, yRows;
         //var int xMug;
@@ -47,7 +47,14 @@ class Visitors {
         //         do Memory.deAlloc(this);
         //     }
         // }
-        do Visitors.draw(4890); //800
+        if (level = 1)
+        {
+            do Visitors.draw(1800);
+        }
+        else
+        {
+            do Visitors.draw(3650);
+        }
         return;
     }
 

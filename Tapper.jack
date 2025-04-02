@@ -1,31 +1,41 @@
 class Tapper {
     field Player player;
     static int lifecount;
+    field int timer;
+    field Visitors visitor;
     constructor Tapper new()
     {
         let player = Player.new();
         let lifecount = 3;
+        let timer = 0;
+        let visitor = Visitors.new(1);
         return this;
     }
     method void run() 
     {
         var Rows rows;
         while (lifecount > 0) {
-            do rows.drawRow();
+            if (timer = 0)
+            {
+                let visitor = Visitors.new(2);
+            }
+            if (timer = 10)
+            {
+                do Tapper.deleteLife();
+                do Visitors.clean();
+                do visitor.dispose();
+                let timer = 0;
+            }
             do update();
-            //do Player.draw();
         }
         do dispose();
         return;
     }
 
     method void update() {
-        var Mug mug;
-        var int level;
-        var Visitors visitor;
-        let level = Player.returnLevel();
-        let visitor = Visitors.new(1);
-        do visitor.move();
+        do rows.drawRow();
+        do visitor.draw();
+        let timer = timer + 1;
         do player.move();
         return;
     }
