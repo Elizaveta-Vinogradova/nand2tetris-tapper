@@ -24,25 +24,28 @@ push argument 0
 pop pointer 0
 push this 1
 return
-function Visitors.move 7
+function Visitors.move 6
 push argument 0
 pop pointer 0
+push this 0
+call Visitors.draw 1
+pop temp 0
 label WHILE_EXP0
 push this 3
 not
 if-goto WHILE_END0
 push this 0
+call Visitors.clean 1
+pop temp 0
+push this 0
 push constant 3
 add
 pop this 0
-push local 5
-call Rows.returnX 1
-pop local 0
-push local 5
-call Rows.returnY 1
-pop local 1
 push this 0
-push local 0
+call Visitors.draw 1
+pop temp 0
+push this 0
+push constant 200
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0
@@ -58,10 +61,10 @@ call Visitors.dispose 1
 pop temp 0
 label IF_FALSE1
 label IF_FALSE0
-push local 6
+push local 5
 call Mug.returnX 1
 pop local 2
-push local 6
+push local 5
 call Mug.returnY 1
 pop local 3
 push this 0
@@ -88,9 +91,15 @@ not
 not
 if-goto WHILE_END1
 push this 0
+call Visitors.clean 1
+pop temp 0
+push this 0
 push constant 3
 sub
 pop this 0
+push this 0
+call Visitors.draw 1
+pop temp 0
 push this 0
 push constant 0
 eq
@@ -184,6 +193,89 @@ push local 0
 push constant 384
 add
 push constant 72
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Visitors.clean 1
+push constant 16384
+push argument 0
+add
+pop local 0
+push local 0
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 32
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 64
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 96
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 128
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 160
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 192
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 224
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 256
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 288
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 320
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 352
+add
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 384
+add
+push constant 0
 call Memory.poke 2
 pop temp 0
 push constant 0
