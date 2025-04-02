@@ -5,7 +5,7 @@ class Player {
 
     constructor Player new(int x, int y)
     {
-        let x = x;
+        let x = x; 
         let y = y;
         let hasMug = true;
         return this;
@@ -39,49 +39,51 @@ class Player {
                 let hasMug = true;
             }
         }
-        if (Keyboard.keyPressed() = 130)
+        // if (Keyboard.keyPressed() = 130)
+        // { 
+        //     do Player.clearOnlyPlayer();
+        //     if (x > 2) {
+        //         let x = x - 2;
+        //     }
+        //     else{
+        //         let x = x;
+        //     }
+        //     do Player.draw();
+        // }
+        // if (Keyboard.keyPressed() = 132)  
+        // { 
+        //     do Player.clearOnlyPlayer();
+        //     if (x < 510) {
+        //         let x = x + 2;
+        //     }
+        //     else{
+        //         let x = x;
+        //     }
+        //     do Player.draw();
+        // }
+        if (Keyboard.keyPressed() = 133)  
         { 
-            do Player.clearOnlyPlayer();
-            if (x > 100) {
-                let x = x - 100;
-            }
-            else{
-                let x = x;
-            }
-            do Player.draw();
-        }
-        if (Keyboard.keyPressed() = 132)  
-        { 
-            do Player.clearOnlyPlayer();
-            if (x < 412) {
-                let x = x + 100;
-            }
-            else{
-                let x = x;
-            }
-            do Player.draw();
+            do Player.clearOnlyPlayer(5626);
+            do Player.clearOnlyPlayer(2520);
+            // if (y < 254) {
+            //     let y = y + 2;
+            // }
+            // else{
+            //     let y = y;
+            // }
+            do Player.drawWithBeer(5626);
         }
         if (Keyboard.keyPressed() = 131)  
         { 
-            do Player.clearOnlyPlayer();
-            if (y < 156) {
-                let y = y + 100;
-            }
-            else{
-                let y = y;
-            }
-            do Player.draw();
-        }
-        if (Keyboard.keyPressed() = 133)  
-        { 
-            do Player.clearOnlyPlayer();
-            if (y > 100) {
-                let y = y - 100;
-            }
-            else{
-                let y = y;
-            }
-            do Player.draw();
+            do Player.clearOnlyPlayer(5626);
+            do Player.clearOnlyPlayer(2520);
+            // if (y > 2) {
+            //     let y = y - 2;
+            // }
+            // else{
+            //     let y = y;
+            // }
+            do Player.drawWithBeer(2520);
         }
         //let xTips = tips.returnX();
         //let yTips = tips.returnY();
@@ -94,17 +96,20 @@ class Player {
     }
 
     function void draw() {
-        if (hasMug) {
-            do Player.drawWithBeer(); 
-        } else {
-            do Player.drawWithoutBeer();
-        }
+        // if (hasMug) {
+        //     do Player.drawWithBeer(2520); 
+        // } else {
+        //     do Player.drawWithoutBeer(2520);
+        // }
+        //do Player.drawWithBeer(2520); 
         return;
     }
 
-    function void drawWithBeer() { //tuda
+    
+
+    function void drawWithBeer(int xForRow) { //tuda
 	var int memAddress; 
-	let memAddress = 16384 + x;
+	let memAddress = 16384+xForRow;
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -118,9 +123,9 @@ class Player {
 	do Memory.poke(memAddress +288, 130);
 	return;
     }
-    function void drawWithoutBeer() {
+    function void drawWithoutBeer(int xForRow) {
 	var int memAddress; 
-	let memAddress = 16384+x;
+	let memAddress = 16384+xForRow; //22010 для нижней!!!!!! 18904 для верхней
 	// column 0
 	do Memory.poke(memAddress, 56);
 	do Memory.poke(memAddress +32, 40);
@@ -135,9 +140,9 @@ class Player {
 	return;
     }
 
-    function void clearOnlyPlayer() {
+    function void clearOnlyPlayer(int xForRow) {
 	var int memAddress; 
-	let memAddress = 16384+x;
+	let memAddress = 16384+xForRow;
 	// column 0
 	do Memory.poke(memAddress, 0);
 	do Memory.poke(memAddress +32, 0);

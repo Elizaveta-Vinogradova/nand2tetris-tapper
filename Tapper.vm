@@ -2,8 +2,8 @@ function Tapper.new 0
 push constant 1
 call Memory.alloc 1
 pop pointer 0
-push constant 360
-push constant 90
+push constant 0
+push constant 0
 call Player.new 2
 pop this 0
 push constant 3
@@ -25,8 +25,6 @@ pop temp 0
 push pointer 0
 call Tapper.update 1
 pop temp 0
-call Player.draw 0
-pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
 push pointer 0
@@ -34,16 +32,9 @@ call Tapper.dispose 1
 pop temp 0
 push constant 0
 return
-function Tapper.update 1
+function Tapper.update 0
 push argument 0
 pop pointer 0
-push constant 0
-push constant 0
-call Visitors.new 2
-pop local 0
-push local 0
-call Visitors.move 1
-pop temp 0
 push this 0
 call Player.move 1
 pop temp 0

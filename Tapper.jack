@@ -3,7 +3,7 @@ class Tapper {
     static int lifecount;
     constructor Tapper new()
     {
-        let player = Player.new(360, 90);
+        let player = Player.new(0, 0);
         let lifecount = 3;
         return this;
     }
@@ -13,16 +13,16 @@ class Tapper {
         while (lifecount > 0) {
             do rows.drawRow();
             do update();
-            do Player.draw();
+            //do Player.draw();
         }
         do dispose();
         return;
     }
 
     method void update() {
-        var Visitors visitor;
-        let visitor = Visitors.new(0, 0);
-        do visitor.move();
+        // var Visitors visitor;
+        // let visitor = Visitors.new(0, 0);
+        // do visitor.move();
         do player.move();
         
         return;
