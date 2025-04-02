@@ -7,11 +7,11 @@ class Mug
     {
 		if (level = 1)
 		{ 
-			let x = 100;
+			let x = 5626;
 		}
 		else
 		{
-			let x = 100;
+			let x = 2520;
 		}
 		let levelMug = Player.returnLevel();
         let ifFull = true;
@@ -39,8 +39,8 @@ class Mug
 			while (x < 512)
 			{
 				do Mug.emptyMug(x);
-				//do Mug.clearMug(x);
-				//let x = x + 16;
+				do Mug.clearMug(x);
+				let x = x + 16;
 			}
 			if (~(levelPlayer = levelMug))
 			{
@@ -52,8 +52,8 @@ class Mug
 			while (x > 0)
 			{
 				do Mug.fullMug(x);
-				//do Mug.clearMug(x);
-				//let x = x - 16;
+				do Mug.clearMug(x);
+				let x = x - 16;
 			}
 		}
 		return;

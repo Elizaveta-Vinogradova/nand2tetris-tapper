@@ -11,10 +11,7 @@ class Rows
     {
         return x;
     }
-    method int returnY()
-    {
-        return y;
-    }
+    
     method void drawRow()
     {
         do Screen.setColor(true);

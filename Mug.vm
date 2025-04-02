@@ -8,11 +8,11 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push constant 100
+push constant 5626
 pop this 1
 goto IF_END0
 label IF_FALSE0
-push constant 100
+push constant 2520
 pop this 1
 label IF_END0
 call Player.returnLevel 0
@@ -55,6 +55,13 @@ if-goto WHILE_END0
 push this 1
 call Mug.emptyMug 1
 pop temp 0
+push this 1
+call Mug.clearMug 1
+pop temp 0
+push this 1
+push constant 16
+add
+pop this 1
 goto WHILE_EXP0
 label WHILE_END0
 push local 2
@@ -78,6 +85,13 @@ if-goto WHILE_END1
 push this 1
 call Mug.fullMug 1
 pop temp 0
+push this 1
+call Mug.clearMug 1
+pop temp 0
+push this 1
+push constant 16
+sub
+pop this 1
 goto WHILE_EXP1
 label WHILE_END1
 label IF_END0
