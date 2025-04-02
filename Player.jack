@@ -1,13 +1,29 @@
 class Player {
+    static int x, y;
+    static int level;
     static boolean hasMug;
     
     //22010 для нижней!!!!!! 18904 для верхней
-    constructor Player new()
+    constructor Player new(int x, int y)
     {
+        let x = x;
+        let y = y;
+        let level = 1;
         let hasMug = true;
         return this;
     }
-    
+    method int returnX()
+    {
+        return x;
+    }
+    method int returnY()
+    {
+        return y;
+    }
+    method int returnLevel()
+    {
+        return level;
+    }
     method void move() 
     {
         var Mug mug;
@@ -31,12 +47,14 @@ class Player {
             do Player.clear(5626);
             do Player.clear(2520);
             do Player.drawSPivom(5626);
+            let level = 2;
         }
         if (Keyboard.keyPressed() = 131)  
         { 
             do Player.clear(5626);
             do Player.clear(2520);
             do Player.drawSPivom(2520);
+            let level = 1;
         } 
         return;
     }
