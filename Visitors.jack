@@ -13,18 +13,16 @@ class Visitors {
         let hasEmptyMug = true;
         return this;
     }
+    
     method int returnX()
     {
         return x;
     }
-    method int returnY()
-    {
-        return y;
-    }
+
     method void move() 
     {
         var int xRows, yRows;
-        var int xMug, yMug;
+        var int xMug;
         var Visitors visitor;
         var Mug mug;
         //do Visitors.draw(1000);
@@ -46,13 +44,9 @@ class Visitors {
                 }
             }
             let xMug = mug.returnX();
-            let yMug = mug.returnY();
             if (x = xMug)
             {
-                if (y = yMug)
-                {
-                    let wantsDrink = false;
-                }
+                let wantsDrink = false;
             }
         }
         while(~wantsDrink)
