@@ -9,7 +9,7 @@ class Player {
         let hasMug = true;
         return this;
     }
-    method int returnLevel()
+    function int returnLevel()
     {
         return level;
     }
@@ -21,7 +21,8 @@ class Player {
         //var int xTips, yTips;
         if ((Keyboard.keyPressed() = 32) & (hasMug))
         {
-            let mug = Mug.new(0,0);
+            let mug = Mug.new(level);
+            do mug.move();
             let hasMug = false;
         }
         else

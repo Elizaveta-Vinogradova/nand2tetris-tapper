@@ -1,30 +1,28 @@
 class Visitors {
-    field int x, y;
+    field int x;
     field int speed;
     field boolean wantsDrink;
-    field boolean hasEmptyMug;
     field int howOften;
+    field int levelVisitor;
 
-    constructor Visitors new(int x, int y)
+    constructor Visitors new(int level)
     {
-        let x = x;
-        let y = y;
+        let levelVisitor = level;
+        if (levelVisitor = 1)
+        {
+            let x = x;
+        }
+        else
+        {
+            let x = x;
+        }
         let wantsDrink = true;
-        let hasEmptyMug = true;
         return this;
     }
-    method int returnX()
-    {
-        return x;
-    }
-    method int returnY()
-    {
-        return y;
-    }
+
     method void move() 
     {
-        var int xRows, yRows;
-        var int xMug, yMug;
+        var int xMug;
         var Visitors visitor;
         var Mug mug;
         do Visitors.draw(x);
@@ -42,13 +40,9 @@ class Visitors {
                 }
             }
             let xMug = mug.returnX();
-            let yMug = mug.returnY();
             if (x = xMug)
             {
-                if (y = yMug)
-                {
-                    let wantsDrink = false;
-                }
+                let wantsDrink = false;
             }
         }
         while(~wantsDrink)

@@ -1,37 +1,35 @@
 function Visitors.new 0
-push constant 6
+push constant 5
 call Memory.alloc 1
 pop pointer 0
 push argument 0
-pop argument 0
-push argument 1
-pop argument 1
-push constant 0
-not
-pop this 3
-push constant 0
-not
 pop this 4
+push this 4
+push constant 1
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 0
+pop this 0
+goto IF_END0
+label IF_FALSE0
+push this 0
+pop this 0
+label IF_END0
+push constant 0
+not
+pop this 2
 push pointer 0
 return
-function Visitors.returnX 0
-push argument 0
-pop pointer 0
-push this 0
-return
-function Visitors.returnY 0
-push argument 0
-pop pointer 0
-push this 1
-return
-function Visitors.move 6
+function Visitors.move 3
 push argument 0
 pop pointer 0
 push this 0
 call Visitors.draw 1
 pop temp 0
 label WHILE_EXP0
-push this 3
+push this 2
 not
 if-goto WHILE_END0
 push this 0
@@ -50,43 +48,33 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push this 3
+push this 2
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
 call Tapper.deleteLife 0
 pop temp 0
-push local 4
+push local 1
 call Visitors.dispose 1
 pop temp 0
 label IF_FALSE1
 label IF_FALSE0
-push local 5
-call Mug.returnX 1
-pop local 2
-push local 5
-call Mug.returnY 1
-pop local 3
-push this 0
 push local 2
+call Mug.returnX 1
+pop local 0
+push this 0
+push local 0
 eq
 if-goto IF_TRUE2
 goto IF_FALSE2
 label IF_TRUE2
-push this 1
-push local 3
-eq
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
 push constant 0
-pop this 3
-label IF_FALSE3
+pop this 2
 label IF_FALSE2
 goto WHILE_EXP0
 label WHILE_END0
 label WHILE_EXP1
-push this 3
+push this 2
 not
 not
 if-goto WHILE_END1
@@ -103,13 +91,13 @@ pop temp 0
 push this 0
 push constant 0
 eq
-if-goto IF_TRUE4
-goto IF_FALSE4
-label IF_TRUE4
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
 push pointer 0
 call Memory.deAlloc 1
 pop temp 0
-label IF_FALSE4
+label IF_FALSE3
 goto WHILE_EXP1
 label WHILE_END1
 push constant 0
