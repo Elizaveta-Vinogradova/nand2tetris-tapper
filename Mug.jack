@@ -17,12 +17,15 @@ class Mug
         let ifFull = true;
         return this;
     }
+
 	method int returnX()
 	{
 		return x;
 	}
+
     method void dispose()
     {
+		do Mug.clearMug(x);
         do Memory.deAlloc(this);
         return;
     }
@@ -36,13 +39,12 @@ class Mug
 			while (x < 512)
 			{
 				do Mug.emptyMug(x);
-				do Mug.clearMug(x);
-				let x = x + 16;
+				//do Mug.clearMug(x);
+				//let x = x + 16;
 			}
 			if (~(levelPlayer = levelMug))
 			{
 				do Tapper.deleteLife();
-				do mug.dispose();
 			}
         } 
 		else
@@ -50,10 +52,9 @@ class Mug
 			while (x > 0)
 			{
 				do Mug.fullMug(x);
-				do Mug.clearMug(x);
-				let x = x - 16;
+				//do Mug.clearMug(x);
+				//let x = x - 16;
 			}
-			do mug.dispose();
 		}
 		return;
 	}

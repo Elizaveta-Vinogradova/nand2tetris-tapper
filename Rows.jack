@@ -1,11 +1,10 @@
 class Rows
 {
-    field int x, y;
+    field int x;
     field int leftCorner, rightCorner;
-    constructor Rows new(int x, int y)
+    constructor Rows new(int x)
     {
         let x = x;
-        let y = y;
         return this;
     }
     method int returnX()
