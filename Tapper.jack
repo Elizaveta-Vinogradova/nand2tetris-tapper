@@ -6,7 +6,7 @@ class Tapper {
     constructor Tapper new()
     {
         let player = Player.new();
-        let lifecount = 3;
+        let lifecount = 5;
         let timer = 0;
         let visitor = Visitors.new(1);
         return this;
@@ -14,30 +14,63 @@ class Tapper {
     method void run() 
     {
         var Rows rows;
+        var int visitorLevel;
+        var int levelPlayer;
+        var int pixelsForLevel;
+        var boolean flagPlayer;
+        let flagPlayer = false;
+        let visitorLevel = 1;   
         do rows.drawRow();
+        //do player.move();
         while (lifecount > 0) {
+            if ((visitorLevel = 1) & (~(flagPlayer)))
+            {
+                let pixelsForLevel = 800;
+                let visitorLevel = 2;
+                let flagPlayer = true;
+            }
+            if ((visitorLevel = 2) & (~(flagPlayer)))
+            {
+                
+                let pixelsForLevel = 3650;
+                let visitorLevel = 1;
+                let flagPlayer = true;
+            }
             do rows.drawRow();
-            do update();
-            //if (timer = 0)
-            //{
-            //    let visitor = Visitors.new(2);
-            //}
-            //if (timer = 10)
-            //{
+            do Visitors.draw(pixelsForLevel);
+            if (timer = 0)
+            {
+               let visitor = Visitors.new(visitorLevel);
+            }
+            // if (timer = 1000)
+            // {
             //    do Tapper.deleteLife();
-            //    do Visitors.clean();
+            //    do Visitors.clean(pixelsForLevel);
             //    //do visitor.dispose();
             //    let timer = 0;
-            //}
-            //do update();
+            //    let flagPlayer = false;
+            // }
+            let levelPlayer = Player.returnMug();
+            if (levelPlayer = visitorLevel)
+            {
+                do Visitors.clean(pixelsForLevel);
+                //do visitor.dispose();
+                let timer = 0;
+                let flagPlayer = false;
+            }
+            else
+            {
+                do update();
+            }
+            let timer = timer + 1;
         }
         //do dispose();
+        do Screen.clearScreen();
         return;
     }
 
     method void update() {
         //do visitor.move();
-        let timer = timer + 1;
         do player.move();
         return;
     }

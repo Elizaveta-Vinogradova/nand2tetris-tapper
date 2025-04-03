@@ -94,6 +94,11 @@ push temp 0
 pop that 0
 push pointer 0
 return
+function Mug.returnRow 0
+push argument 0
+pop pointer 0
+push this 3
+return
 function Mug.returnX 0
 push argument 0
 pop pointer 0
@@ -123,16 +128,13 @@ push constant 4
 lt
 not
 if-goto WHILE_END0
-push constant 100
-call Sys.wait 1
-pop temp 0
 push this 3
 push constant 2
 eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 push local 3
@@ -141,12 +143,12 @@ add
 pop pointer 1
 push that 0
 pop local 4
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 goto IF_END0
 label IF_FALSE0
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 push local 3
@@ -155,14 +157,14 @@ add
 pop pointer 1
 push that 0
 pop local 4
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 label IF_END0
 push local 4
 call Mug.fullMug 1
 pop temp 0
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 push local 4
@@ -185,7 +187,7 @@ push constant 4
 lt
 not
 if-goto WHILE_END1
-push constant 100
+push constant 500
 call Sys.wait 1
 pop temp 0
 push this 3
@@ -194,7 +196,7 @@ eq
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
-push constant 100
+push constant 500
 call Sys.wait 1
 pop temp 0
 push constant 3
@@ -205,12 +207,12 @@ add
 pop pointer 1
 push that 0
 pop local 4
-push constant 100
+push constant 500
 call Sys.wait 1
 pop temp 0
 goto IF_END1
 label IF_FALSE1
-push constant 100
+push constant 500
 call Sys.wait 1
 pop temp 0
 push constant 3
@@ -221,14 +223,14 @@ add
 pop pointer 1
 push that 0
 pop local 4
-push constant 100
+push constant 500
 call Sys.wait 1
 pop temp 0
 label IF_END1
 push local 4
 call Mug.emptyMug 1
 pop temp 0
-push constant 100
+push constant 2000
 call Sys.wait 1
 pop temp 0
 push local 4

@@ -4,7 +4,12 @@ call Memory.alloc 1
 pop pointer 0
 push constant 1
 pop static 0
+push constant 0
+pop static 1
 push pointer 0
+return
+function Player.returnMug 0
+push static 1
 return
 function Player.returnLevel 0
 push static 0
@@ -21,6 +26,8 @@ label IF_TRUE0
 push static 0
 call Mug.new 1
 pop local 0
+push static 0
+pop static 1
 push local 0
 call Mug.move 1
 pop temp 0

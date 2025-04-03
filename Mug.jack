@@ -32,7 +32,10 @@ class Mug
 		let counterForMugsForLower[3] = 4480; 
         return this;
     }
-
+	method int returnRow()
+	{
+		return levelMug;
+	}
 	method int returnX()
 	{
 		return getX;
@@ -55,22 +58,22 @@ class Mug
 		let hasReachedVisitor = false;
 		while(counter < 4)
 		{
-			do Sys.wait(100);
+			//do Sys.wait(100);
 			if (levelMug = 2)
 			{
-				do Sys.wait(100);
+				do Sys.wait(2000);
 				let arr = counterForMugsForLower[counter];
-				do Sys.wait(100);
+				do Sys.wait(2000);
 			}
 			else
 			{
-				do Sys.wait(100);
+				do Sys.wait(2000);
 				let arr = counterForMugsForUpper[counter];
-				do Sys.wait(100);
+				do Sys.wait(2000);
 			}
 			
 			do Mug.fullMug(arr);
-			do Sys.wait(100);
+			do Sys.wait(2000);
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
 		}
@@ -78,22 +81,22 @@ class Mug
 		let counter = 0;
 		while(counter < 4)
 		{
-			do Sys.wait(100);
+			do Sys.wait(500);
 			if (levelMug = 2)
 			{
-				do Sys.wait(100);
+				do Sys.wait(500);
 				let arr = counterForMugsForLower[3 - counter];
-				do Sys.wait(100);
+				do Sys.wait(500);
 			}
 			else
 			{
-				do Sys.wait(100);
+				do Sys.wait(500);
 				let arr = counterForMugsForUpper[3 - counter];
-				do Sys.wait(100);
+				do Sys.wait(500);
 			}
 			
 			do Mug.emptyMug(arr);
-			do Sys.wait(100);
+			do Sys.wait(2000);
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
 		}

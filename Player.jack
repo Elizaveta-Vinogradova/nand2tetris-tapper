@@ -1,11 +1,16 @@
 class Player {
     static int level;
-    
+    static int levelOfMug;
     //22010 для нижней!!!!!! 18904 для верхней
     constructor Player new()
     {
         let level = 1;
+        let levelOfMug = 0;
         return this;
+    }
+    function int returnMug()
+    {
+        return levelOfMug;
     }
     function int returnLevel()
     {
@@ -20,6 +25,7 @@ class Player {
         if ((Keyboard.keyPressed() = 32))
         {
             let mug = Mug.new(level);
+            let levelOfMug = level;
             do mug.move();
         }
 

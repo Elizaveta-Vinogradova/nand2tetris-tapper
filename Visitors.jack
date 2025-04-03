@@ -9,47 +9,9 @@ class Visitors {
     
     method void move() 
     {
-        //var int xRows, yRows;
-        //var int xMug;
-        //var Visitors visitor;
-        //var Mug mug;
-        //do Visitors.draw(1000);
-        //if (Keyboard.keyPressed() = 130)  
-        //{
-        //    do Visitors.draw(1000);
-        //}
-        //while(wantsDrink)
-        //{
-        //   do Visitors.clean(1000);
-        //    let x = x + 3;
-        //    do Visitors.draw(1000);
-        //    if (x = 200)
-        //    {
-        //        if (wantsDrink)
-        //        {
-        //            do Tapper.deleteLife();
-        //            do visitor.dispose();
-        //        }
-        //    }
-        //    let xMug = mug.returnX();
-        //    if (x = xMug)
-        //    {
-        //        let wantsDrink = false;
-        //    }
-        // }
-        // while(~wantsDrink)
-        // {
-        //     do Visitors.clean(1000);
-        //     let x = x - 3;
-        //     do Visitors.draw(1000);
-        //     if (x = 0)
-        //     {
-        //         do Memory.deAlloc(this);
-        //     }
-        // }
         if (level = 1)
         {
-            do Visitors.draw(1800);
+            do Visitors.draw(800);
         }
         else
         {

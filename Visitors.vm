@@ -15,7 +15,7 @@ eq
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
-push constant 1800
+push constant 800
 call Visitors.draw 1
 pop temp 0
 goto IF_END0
