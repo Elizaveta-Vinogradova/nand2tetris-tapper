@@ -16,25 +16,27 @@ class Tapper {
         var Rows rows;
         do rows.drawRow();
         while (lifecount > 0) {
-            if (timer = 0)
-            {
-                let visitor = Visitors.new(2);
-            }
-            if (timer = 10)
-            {
-                do Tapper.deleteLife();
-                //do Visitors.clean();
-                //do visitor.dispose();
-                let timer = 0;
-            }
+            do rows.drawRow();
             do update();
+            //if (timer = 0)
+            //{
+            //    let visitor = Visitors.new(2);
+            //}
+            //if (timer = 10)
+            //{
+            //    do Tapper.deleteLife();
+            //    do Visitors.clean();
+            //    //do visitor.dispose();
+            //    let timer = 0;
+            //}
+            //do update();
         }
         //do dispose();
         return;
     }
 
     method void update() {
-        do visitor.move();
+        //do visitor.move();
         let timer = timer + 1;
         do player.move();
         return;

@@ -4,13 +4,8 @@ class Main
     {
         var Tapper game;
         do Screen.clearScreen();
-        while (true)
-        {
-            let game = Tapper.new();
-            do game.run();
-            //do game.dispose();
-        }
-        do Screen.clearScreen();
+        let game = Tapper.new();
+        do game.run();
         return;
     }
 }

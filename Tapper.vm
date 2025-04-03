@@ -25,27 +25,9 @@ push constant 0
 gt
 not
 if-goto WHILE_END0
-push this 1
-push constant 0
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push constant 2
-call Visitors.new 1
-pop this 2
-label IF_FALSE0
-push this 1
-push constant 10
-eq
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-call Tapper.deleteLife 0
+push local 0
+call Rows.drawRow 1
 pop temp 0
-push constant 0
-pop this 1
-label IF_FALSE1
 push pointer 0
 call Tapper.update 1
 pop temp 0
@@ -56,9 +38,6 @@ return
 function Tapper.update 0
 push argument 0
 pop pointer 0
-push this 2
-call Visitors.move 1
-pop temp 0
 push this 1
 push constant 1
 add
