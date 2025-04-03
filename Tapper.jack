@@ -24,12 +24,12 @@ class Tapper {
             {
                 do Tapper.deleteLife();
                 //do Visitors.clean();
-                do visitor.dispose();
+                //do visitor.dispose();
                 let timer = 0;
             }
             do update();
         }
-        do dispose();
+        //do dispose();
         return;
     }
 

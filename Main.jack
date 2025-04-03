@@ -3,13 +3,14 @@ class Main
     function void main()
     {
         var Tapper game;
+        do Screen.clearScreen();
         while (true)
         {
-            do Screen.clearScreen();
             let game = Tapper.new();
             do game.run();
-            do game.dispose();
+            //do game.dispose();
         }
+        do Screen.clearScreen();
         return;
     }
 }
