@@ -14,6 +14,7 @@ class Tapper {
     method void run() 
     {
         var Rows rows;
+        do rows.drawRow();
         while (lifecount > 0) {
             if (timer = 0)
             {
@@ -22,7 +23,7 @@ class Tapper {
             if (timer = 10)
             {
                 do Tapper.deleteLife();
-                do Visitors.clean();
+                //do Visitors.clean();
                 do visitor.dispose();
                 let timer = 0;
             }
@@ -33,8 +34,7 @@ class Tapper {
     }
 
     method void update() {
-        do rows.drawRow();
-        do visitor.draw();
+        do visitor.move();
         let timer = timer + 1;
         do player.move();
         return;

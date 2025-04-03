@@ -1,15 +1,8 @@
 class Rows
 {
-    field int x;
-    field int leftCorner, rightCorner;
-    constructor Rows new(int x)
+    constructor Rows new()
     {
-        let x = x;
         return this;
-    }
-    method int returnX()
-    {
-        return x;
     }
     
     method void drawRow()

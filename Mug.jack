@@ -47,47 +47,12 @@ class Mug
     }
     method void move()
 	{
-		// var Player player;
-		// var Mug mug;
-		// var int levelPlayer;
-		// var Visitors visitor;
-		// var int location;
-		// if (~ifFull) 
-        // {
-		// 	if (getX < 512)
-		// 	{
-		// 		do Mug.emptyMug(getX, y);
-		// 		do Mug.clearMug(getX, y);
-		// 		let getX = getX + 16;
-		// 	}
-		// 	else
-		// 	{
-		// 		let levelPlayer = Player.returnLevel();
-		// 		if (~(levelPlayer = levelMug))
-		// 		{
-		// 			do Tapper.deleteLife();
-		// 		}
-		// 	}
-        // } 
-		// else
-		// {
-		// 	if (getX > 0)
-		// 	{
-		// 		do Mug.fullMug(getX, y);
-		// 		do Mug.clearMug(getX, y);
-		// 		let getX = getX - 16;
-		// 		//let location = visitor.returnX();
-		// 		// if (getX = location)
-		// 		// {
-		// 		// }
-		// 	}
-		// }
 		var boolean hasReachedVisitor, hasReachedTapper;
 		var int level;
 		var int counter;
 		var int arr;
 		let counter = 0;
-		let hasReached = false;
+		let hasReachedVisitor = false;
 		while(counter < 4)
 		{
 			do Sys.wait(100);
@@ -109,7 +74,7 @@ class Mug
 			do Mug.clearMug(arr);
 			let counter = counter + 1;
 		}
-		hasReached = true;
+		let hasReachedVisitor = true;
 		let counter = 0;
 		while(counter < 4)
 		{

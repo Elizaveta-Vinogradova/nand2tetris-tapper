@@ -16,6 +16,9 @@ return
 function Tapper.run 1
 push argument 0
 pop pointer 0
+push local 0
+call Rows.drawRow 1
+pop temp 0
 label WHILE_EXP0
 push static 0
 push constant 0
@@ -40,8 +43,6 @@ goto IF_FALSE1
 label IF_TRUE1
 call Tapper.deleteLife 0
 pop temp 0
-call Visitors.clean 0
-pop temp 0
 push this 2
 call Visitors.dispose 1
 pop temp 0
@@ -61,10 +62,8 @@ return
 function Tapper.update 0
 push argument 0
 pop pointer 0
-call rows.drawRow 0
-pop temp 0
 push this 2
-call Visitors.draw 1
+call Visitors.move 1
 pop temp 0
 push this 1
 push constant 1

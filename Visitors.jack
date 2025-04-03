@@ -7,7 +7,7 @@ class Visitors {
         return this;
     }
     
-    method void draw() 
+    method void move() 
     {
         //var int xRows, yRows;
         //var int xMug;
