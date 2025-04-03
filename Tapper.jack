@@ -6,7 +6,7 @@ class Tapper {
     constructor Tapper new()
     {
         let player = Player.new();
-        let lifecount = 5;
+        let lifecount = 1;
         let timer = 0;
         let visitor = Visitors.new(1);
         return this;
@@ -15,25 +15,27 @@ class Tapper {
     {
         var Rows rows;
         var int visitorLevel;
+        var int nextLevel;
         var int levelPlayer;
         var int pixelsForLevel;
         var boolean flagPlayer;
-        let flagPlayer = false;
-        let visitorLevel = 1;   
+        let flagPlayer = false; 
+        let nextLevel = 1;
+        let visitorLevel = nextLevel;
         do rows.drawRow();
         //do player.move();
         while (lifecount > 0) {
             if ((visitorLevel = 1) & (~(flagPlayer)))
             {
                 let pixelsForLevel = 800;
-                let visitorLevel = 2;
+                let nextLevel = 2;
                 let flagPlayer = true;
             }
             if ((visitorLevel = 2) & (~(flagPlayer)))
             {
                 
                 let pixelsForLevel = 3650;
-                let visitorLevel = 1;
+                let nextLevel = 1;
                 let flagPlayer = true;
             }
             do rows.drawRow();
@@ -42,14 +44,14 @@ class Tapper {
             {
                let visitor = Visitors.new(visitorLevel);
             }
-            // if (timer = 1000)
-            // {
-            //    do Tapper.deleteLife();
-            //    do Visitors.clean(pixelsForLevel);
-            //    //do visitor.dispose();
-            //    let timer = 0;
-            //    let flagPlayer = false;
-            // }
+            if (timer = 100)
+            {
+               do Tapper.deleteLife();
+               do Visitors.clean(pixelsForLevel);
+               //do visitor.dispose();
+               let timer = 0;
+               let flagPlayer = false;
+            }
             let levelPlayer = Player.returnMug();
             if (levelPlayer = visitorLevel)
             {
@@ -57,6 +59,7 @@ class Tapper {
                 //do visitor.dispose();
                 let timer = 0;
                 let flagPlayer = false;
+                let visitorLevel = nextLevel;
             }
             else
             {

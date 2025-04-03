@@ -4,7 +4,7 @@ call Memory.alloc 1
 pop pointer 0
 call Player.new 0
 pop this 0
-push constant 5
+push constant 1
 pop static 0
 push constant 0
 pop this 1
@@ -13,12 +13,14 @@ call Visitors.new 1
 pop this 2
 push pointer 0
 return
-function Tapper.run 5
+function Tapper.run 6
 push argument 0
 pop pointer 0
 push constant 0
-pop local 4
+pop local 5
 push constant 1
+pop local 2
+push local 2
 pop local 1
 push local 0
 call Rows.drawRow 1
@@ -32,41 +34,41 @@ if-goto WHILE_END0
 push local 1
 push constant 1
 eq
-push local 4
+push local 5
 not
 and
 if-goto IF_TRUE0
 goto IF_FALSE0
 label IF_TRUE0
 push constant 800
-pop local 3
+pop local 4
 push constant 2
-pop local 1
+pop local 2
 push constant 0
 not
-pop local 4
+pop local 5
 label IF_FALSE0
 push local 1
 push constant 2
 eq
-push local 4
+push local 5
 not
 and
 if-goto IF_TRUE1
 goto IF_FALSE1
 label IF_TRUE1
 push constant 3650
-pop local 3
+pop local 4
 push constant 1
-pop local 1
+pop local 2
 push constant 0
 not
-pop local 4
+pop local 5
 label IF_FALSE1
 push local 0
 call Rows.drawRow 1
 pop temp 0
-push local 3
+push local 4
 call Visitors.draw 1
 pop temp 0
 push this 1
@@ -79,27 +81,45 @@ push local 1
 call Visitors.new 1
 pop this 2
 label IF_FALSE2
-call Player.returnMug 0
-pop local 2
-push local 2
-push local 1
+push this 1
+push constant 100
 eq
 if-goto IF_TRUE3
 goto IF_FALSE3
 label IF_TRUE3
-push local 3
+call Tapper.deleteLife 0
+pop temp 0
+push local 4
 call Visitors.clean 1
 pop temp 0
 push constant 0
 pop this 1
 push constant 0
-pop local 4
-goto IF_END3
+pop local 5
 label IF_FALSE3
+call Player.returnMug 0
+pop local 3
+push local 3
+push local 1
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 4
+call Visitors.clean 1
+pop temp 0
+push constant 0
+pop this 1
+push constant 0
+pop local 5
+push local 2
+pop local 1
+goto IF_END4
+label IF_FALSE4
 push pointer 0
 call Tapper.update 1
 pop temp 0
-label IF_END3
+label IF_END4
 push this 1
 push constant 1
 add
